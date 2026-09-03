@@ -46,8 +46,10 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="md:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-sm aspect-[4/5] border-8 border-industrial-gray group overflow-hidden">
-              <div className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url('${IMAGES.md}')` }} />
+            <div className="relative w-full max-w-sm aspect-[4/5] border-8 border-industrial-gray overflow-hidden bg-surface-container-low flex items-center justify-center">
+              <span className="material-symbols-outlined text-primary/25 text-[8rem]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                person
+              </span>
               <div className="absolute bottom-0 left-0 right-0 bg-primary/90 p-6">
                 <h3 className="text-on-primary font-display text-title-md">{COMPANY.md}</h3>
                 <p className="text-on-primary-container font-mono text-label-mono uppercase">{COMPANY.mdTitle}</p>

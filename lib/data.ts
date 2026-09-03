@@ -149,7 +149,6 @@ export const IMAGES = {
   hero: "/images/tins/gift-tin-containers.jpg",
   about: "/images/tins/air-tight-printed-tin-container.jpg",
   aboutHero: "/images/tins/biryani-1kg.jpg",
-  md: "https://lh3.googleusercontent.com/aida-public/AB6AXuDyvMkIJZrhxwT-fuqgsj-__mYlwESsnarTNleLXd4kkvSLwktxb6wsZl2R7D5pjYQPajJJ0-iBQ-Wki79WiF6A7K6B6acmCdr8iqlxJapYCO0l_FHZuBQ1USHDQ2pz0lQz7jI3i-YIJ8NRwUddbDVEUF-Gjy45sY0Tf6QZZv15Q5_wflGwtMcHHcbA6ZLW6yCoNmUqNo1LPcnAuyqG0R1a4QA0H55X1b8CFFYgD5zbK9ldgOzSpuniNZ3Q5DT_BYGNwWhCt27K05PO",
   warehouse: "/images/tins/1kg-round-tin-box.jpg",
   machine: "/images/tins/2l-paint-tin-container.jpg",
   print: "/images/tins/cake-custom.jpg",
