@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Sri Padmavathi Industries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;900&amp;family=IBM+Plex+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=IBM+Plex+Sans:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-pattern {
+            background-color: #fcf9f8;
+            background-image: radial-gradient(#e3beb7 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .structural-line {
+            background: linear-gradient(90deg, #9e1000 0%, transparent 100%);
+            height: 2px;
+            width: 80px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#fcf9f8",
+                        "outline-variant": "#e3beb7",
+                        "surface-tint": "#b62410",
+                        "inverse-surface": "#313030",
+                        "on-error": "#ffffff",
+                        "surface": "#fcf9f8",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#9e1000",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf9f8",
+                        "on-surface-variant": "#5b403b",
+                        "inverse-primary": "#ffb4a6",
+                        "on-surface": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-high": "#eae7e7",
+                        "surface-container": "#f0eded",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#363738",
+                        "tertiary-container": "#4c4e4f",
+                        "secondary": "#5f5e5e",
+                        "on-secondary-container": "#656464",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-dim": "#dcd9d9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-container": "#bfbfc0",
+                        "primary-fixed": "#ffdad4",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-fixed-variant": "#474746",
+                        "surface-container-highest": "#e5e2e1",
+                        "secondary-fixed": "#e4e2e1",
+                        "secondary-container": "#e4e2e1",
+                        "on-primary-container": "#ffaa9b",
+                        "on-primary-fixed": "#3f0300",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-primary-fixed-variant": "#900e00",
+                        "error-container": "#ffdad6",
+                        "outline": "#8f706a",
+                        "primary-fixed-dim": "#ffb4a6",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#9e1000",
+                        "on-background": "#1c1b1b",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "metallic-silver": "#e3beb7",
+                        "industrial-gray": "#f0eded",
+                        "steel-blue": "#5f5e5e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "caption": ["IBM Plex Sans"],
+                        "label-mono": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["IBM Plex Sans"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface industrial-pattern">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-metallic-silver sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-title-md font-title-md font-bold text-primary">Sri Padmavathi Industries</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Our Products</a>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 text-body-md font-body-md" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Photos</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Contact Us</a>
+</nav>
+<div class="flex gap-4">
+<button class="hidden lg:block bg-primary text-on-primary px-6 py-2 text-label-mono font-label-mono uppercase tracking-wider scale-95 hover:bg-surface-tint active:opacity-80 transition-all">Contact Supplier</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative bg-primary py-24 overflow-hidden">
+<div class="absolute inset-0 opacity-20">
+<div class="w-full h-full bg-cover bg-center" data-alt="An expansive aerial perspective of a sprawling industrial manufacturing facility featuring clean, geometric architectural lines and metallic surfaces." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsvV1WQMveuZNJ-5HpJZvTXWzWeqnfBBe3X1GQcN_EN9PS8JpMWLHBm085P6Ck1Cu3yVfK32OFYNJMIpjfCjqma8yx06HNUtlq39Ay_N8HS5QorNCAG2TkiD60jyqsASHPS3ffI8FWQeQVyAJkW7e7_QXB77w8kC5mNFYKk5KqScf_h_EnvLoFZNdWNqX6-wAIKNe1Zjh8U1mkyKr2ExbKYnhr7tjOLKDv_dgxdoW4suxFyHua4rI-Oalc-CbFP_rPF_l79XsejUkX')"></div>
+</div>
+<div class="relative max-w-container-max mx-auto px-margin-desktop flex flex-col items-center text-center">
+<h1 class="font-display-lg text-display-lg text-on-primary mb-6 max-w-3xl">Pioneering Industrial Packaging Solutions Since 2009</h1>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl">Sri Padmavathi Industries is a cornerstone of the manufacturing sector in Chennai, delivering precision-engineered tin containers for global markets.</p>
+</div>
+</section>
+<!-- Our Story & MD Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7">
+<div class="mb-4">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-widest">The Journey</span>
+<div class="structural-line mt-2"></div>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-8">Crafting Excellence in Chennai</h2>
+<div class="space-y-6 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<p>Founded in 2009 in the industrial heart of Tamil Nadu, <strong>Sri Padmavathi Industries</strong> began with a singular vision: to redefine the standards of industrial packaging through technical precision and unwavering quality. Operating as a Sole Proprietorship, we have evolved into a premier manufacturer and wholesaler of high-grade Tin Containers, Ghee Tins, and Food Cans.</p>
+<p>Under the visionary leadership of Mr. R Sugumar, we have established ourselves as a trusted partner for diverse industries, ranging from food processing to luxury gifting. Our commitment to utilizing superior raw materials and state-of-the-art lithography ensures that every product leaving our facility is a testament to durability and design.</p>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col items-center">
+<div class="relative w-full max-w-sm aspect-[4/5] border-8 border-industrial-gray group overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A professional portrait of an Indian industrialist, Mr. R Sugumar." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDyvMkIJZrhxwT-fuqgsj-__mYlwESsnarTNleLXd4kkvSLwktxb6wsZl2R7D5pjYQPajJJ0-iBQ-Wki79WiF6A7K6B6acmCdr8iqlxJapYCO0l_FHZuBQ1USHDQ2pz0lQz7jI3i-YIJ8NRwUddbDVEUF-Gjy45sY0Tf6QZZv15Q5_wflGwtMcHHcbA6ZLW6yCoNmUqNo1LPcnAuyqG0R1a4QA0H55X1b8CFFYgD5zbK9ldgOzSpuniNZ3Q5DT_BYGNwWhCt27K05PO')"></div>
+<div class="absolute bottom-0 left-0 right-0 bg-primary/90 p-6 backdrop-blur-sm">
+<h3 class="text-on-primary font-title-md text-title-md">R. Sugumar</h3>
+<p class="text-on-primary-container font-label-mono text-label-mono uppercase">Managing Director</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Factsheet - Industrial Bento Grid -->
+<section class="bg-industrial-gray py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg mb-4">Enterprise Factsheet</h2>
+<p class="font-label-mono text-label-mono text-steel-blue">TECHNICAL SPECIFICATIONS &amp; CORPORATE DATA</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Stat Card 1 -->
+<div class="bg-surface p-8 border border-metallic-silver hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform block">factory</span>
+<div class="font-label-mono text-caption text-steel-blue uppercase mb-1">Nature of Business</div>
+<div class="font-title-md text-title-md text-on-surface">Manufacturer &amp; Wholesaler</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface p-8 border border-metallic-silver hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform block">groups</span>
+<div class="font-label-mono text-caption text-steel-blue uppercase mb-1">Workforce</div>
+<div class="font-title-md text-title-md text-on-surface">11 to 25 Professionals</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface p-8 border border-metallic-silver hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform block">payments</span>
+<div class="font-label-mono text-caption text-steel-blue uppercase mb-1">Annual Turnover</div>
+<div class="font-title-md text-title-md text-on-surface">₹1.5 - 5 Crore</div>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface p-8 border border-metallic-silver hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform block">verified</span>
+<div class="font-label-mono text-caption text-steel-blue uppercase mb-1">Certification</div>
+<div class="font-title-md text-title-md text-on-surface">Trust Seal Verified</div>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-primary text-on-primary p-8 flex items-center justify-between">
+<div>
+<div class="font-label-mono text-caption uppercase text-on-primary-container">Established Year</div>
+<div class="font-display-lg text-display-lg">2009</div>
+</div>
+<div class="text-right">
+<div class="font-label-mono text-caption uppercase text-on-primary-container">Location</div>
+<div class="font-title-md text-title-md">Chennai, Tamil Nadu</div>
+</div>
+</div>
+<div class="bg-white p-8 border border-metallic-silver flex items-center gap-8">
+<div class="font-label-mono text-caption uppercase text-steel-blue">GST Identification</div>
+<div class="font-title-md text-title-md tracking-widest text-primary">33*********1ZZ</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Infrastructure Showcase -->
+<section class="py-section-gap max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-4 self-center">
+<div class="mb-4">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-widest">Infrastructure</span>
+<div class="structural-line mt-2"></div>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-6">Built for High Volume Production</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Our Chennai-based facility is equipped with automated printing and shaping machinery, capable of meeting large-scale industrial demands while maintaining precision within microns.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">Climate-controlled storage zones</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">Advanced lithography printing units</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="font-body-md">24/7 Quality monitoring station</span>
+</li>
+</ul>
+</div>
+<div class="lg:col-span-8 grid grid-cols-2 gap-4 h-[500px]">
+<div class="relative overflow-hidden h-full">
+<div class="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-1000" data-alt="A wide-angle photograph of a modern, organized industrial warehouse facility." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8lde8mNMJFLlh4QkizRahJJZDxsCAtk-_oLSAjOmaT54W3MuZAuMIryJaeEscMY2AGAzQs3J5MdEfVmAXiYXuYhS0vtUHaNBLUNJiGZWp35xD02jNKefLwOVNnoav6F0evekp83RrGnlXdoqQmNcpDTMhfqKFQvr7PqpT5P5RTt_yXoOXKWdgOJw4JuacEgYdEzgxxhaZcYCaCd1dnDy3wkOkJ7a02QVK95ugNRCOwFkNIhNGkTi6_5X1wpSWcl8N59Eo7a_zs-TQ')"></div>
+</div>
+<div class="grid grid-rows-2 gap-4 h-full">
+<div class="relative overflow-hidden h-full">
+<div class="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-1000" data-alt="Close-up shot of a sophisticated metal container shaping machine." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCO4vIdoTm7h-Coa1-vFh_JS15npodT9OMbaSqpNyY1PrL77A8SVzs4P52LjXlTzbwiLRPGezgjzY7InEXImyS6QginbrWN4yGsFq7Gleha07N1ncLOBbLWGe3lru6eItSA4iRKkm4bkpXdzh3teVtb1oGyMGAzhdw0nbDbazavfvZbIYXQCBBifg7Qiyxm0CNMmCVj4znkwz0L6WFF3u95pTvGPfmNXhbKApjKQYuVgnRQd2N4TwjocxTu9rO25HYCgiAenSF7fUCi')"></div>
+</div>
+<div class="relative overflow-hidden h-full">
+<div class="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-1000" data-alt="A high-quality industrial printing line." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnxqS2lyiSLStjXV5F2EGC9HgDk_LRXG0s4nc8C4Cd1ER3ZV9440kCJcqcCocdveFJ5_9XLGV0ir6PoPbawJg80nr5cFiUtPOTtkxDztiUaLPN9rx4zNoClBSxqGD_B2TC8lLpBri7xlySgC8S-i0_kBGppAaX1T--636brxSXoIX0YBb2zZPjZGWiu1K4UaY5zPtrZneba5dZx026Ji1Dz0YiQaTPsZ1ADce9JhSkUQy6PYY6erHpT5oyV4dKVfljVlE1olIO-5aO')"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Us - Value Proposition -->
+<section class="py-section-gap bg-primary text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-8 border-l border-on-primary-container/30">
+<div class="font-display-lg text-headline-lg mb-4">01</div>
+<h3 class="font-title-md text-title-md mb-4 uppercase tracking-wider">Uncompromising Quality</h3>
+<p class="font-body-md text-on-primary-container/80">We utilize only the highest grade tinplate and food-safe coatings to ensure product longevity and safety for end consumers.</p>
+</div>
+<div class="p-8 border-l border-on-primary-container/30">
+<div class="font-display-lg text-headline-lg mb-4">02</div>
+<h3 class="font-title-md text-title-md mb-4 uppercase tracking-wider">Cost Effectiveness</h3>
+<p class="font-body-md text-on-primary-container/80">Our vertically integrated manufacturing process allows us to offer competitive pricing without sacrificing structural integrity.</p>
+</div>
+<div class="p-8 border-l border-on-primary-container/30">
+<div class="font-display-lg text-headline-lg mb-4">03</div>
+<h3 class="font-title-md text-title-md mb-4 uppercase tracking-wider">Large Capacity</h3>
+<p class="font-body-md text-on-primary-container/80">Equipped for scale, we handle bulk orders with strict adherence to timelines, serving as a reliable backbone for your supply chain.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap bg-background border-y border-metallic-silver">
+<div class="max-w-container-max mx-auto px-margin-desktop text-center">
+<h2 class="font-headline-lg text-headline-lg mb-8">Ready to secure your packaging supply?</h2>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-4 font-label-mono text-label-mono uppercase tracking-widest hover:bg-surface-tint transition-all">Contact Supplier Now</button>
+<button class="border border-primary text-primary px-10 py-4 font-label-mono text-label-mono uppercase tracking-widest hover:bg-industrial-gray transition-all">Download Catalogue</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-industrial-gray border-t-4 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-4">
+<span class="text-headline-lg font-headline-lg font-black text-primary block mb-6">Sri Padmavathi Industries</span>
+<p class="font-body-md text-on-surface-variant mb-6 max-w-sm">A leading name in industrial tin packaging, dedicated to quality, precision, and customer satisfaction since 2009.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h4 class="font-label-mono text-label-mono text-primary uppercase font-bold mb-6">Navigation</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">About Us</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Our Products</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Contact Us</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Photos</a></li>
+</ul>
+</div>
+<div class="md:col-span-3">
+<h4 class="font-label-mono text-label-mono text-primary uppercase font-bold mb-6">Contact Details</h4>
+<div class="space-y-4 text-body-md text-on-surface-variant">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span>Chennai, Tamil Nadu, India</span>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<span>View Mobile Number</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-3">
+<h4 class="font-label-mono text-label-mono text-primary uppercase font-bold mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-primary hover:underline transition-colors" href="#">Terms of Use</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-metallic-silver py-6 bg-surface px-margin-desktop">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-mono text-caption text-steel-blue">© 2024 Sri Padmavathi Industries. All Rights Reserved.</p>
+<div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all opacity-70">
+<span class="font-label-mono text-caption">Member of</span>
+<div class="w-20 h-6 bg-contain bg-no-repeat bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdYZA7rH33hAobzPODJANQuf3K5y2vy4_6IfEUXf44BhDofjzB9l_I24dDfc4zpgsC-FOR_-Fot56SIP8hDGtKdAh787oDgV1zEXPujTwKyvj4d-1xpbfWhRNtrmlm9TFINy3NEJ0enJC-gqdeUWfRITM2A9X3n8opSpflkofPJ8deyJLQpLqhSjw8nne5R0vqdj1M2ojCZyJuPpVLwUU0ByI0-YMUTukKcyebivTGH1G25sl7rO53AleMwjyy9uO5dBqyEz4rGq-a')"></div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Fixed Contact Bar for Mobile -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-[60] grid grid-cols-2 h-14 border-t border-metallic-silver">
+<button class="bg-surface text-primary flex items-center justify-center gap-2 font-label-mono text-label-mono uppercase font-bold">
+<span class="material-symbols-outlined">call</span> Call
+    </button>
+<button class="bg-primary text-on-primary flex items-center justify-center gap-2 font-label-mono text-label-mono uppercase font-bold">
+<span class="material-symbols-outlined">mail</span> Inquiry
+    </button>
+</div>
+<script>
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        section.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-10');
+        observer.observe(section);
+    });
+</script>
+</body></html>

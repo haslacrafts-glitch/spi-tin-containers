@@ -1,0 +1,602 @@
+{
+  "categories": [
+    "Biryani Tin Containers",
+    "Paint Tin Containers",
+    "Tin Containers",
+    "Tin Box",
+    "Kumkum Box",
+    "Oil & Ghee Tin Containers",
+    "Customized Tin Containers",
+    "Gift Tins",
+    "Food Cans",
+    "Canister Lid",
+    "PVC Solvent Tins",
+    "Container Lid",
+    "Container Bottom",
+    "Customized Cookies Tins",
+    "Protein Powder Tin Can",
+    "Square Tin Boxes",
+    "Tin Cans",
+    "Cosmetic Container",
+    "Lip Balm Container",
+    "Sweets Tin Box"
+  ],
+  "products": [
+    {
+      "id": "biryani-1kg",
+      "name": "1 Kg Printed Biryani Tin Container",
+      "category": "Biryani Tin Containers",
+      "image": "/images/tins/biryani-1kg.jpg",
+      "specs": [
+        "USAGE: KITCHEN FOOD STORAGE",
+        "SHAPE: ROUND",
+        "ORIGIN: MADE IN INDIA"
+      ],
+      "price": "₹65/Piece",
+      "bestSeller": true,
+      "description": "1 Kg Printed Biryani Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹65/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "200-grams-printed-biryani-tin-container",
+      "name": "200 Grams Printed Biryani Tin Container",
+      "category": "Biryani Tin Containers",
+      "image": "/images/tins/200-grams-printed-biryani-tin-container.jpg",
+      "specs": [
+        "USAGE: FOOD STORE",
+        "CAPACITY: 200 ML",
+        "COLOR: BROWN"
+      ],
+      "price": "₹32/Piece",
+      "bestSeller": false,
+      "description": "200 Grams Printed Biryani Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹32/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "biryani-300g",
+      "name": "300g Printed Biryani Tin Containers",
+      "category": "Biryani Tin Containers",
+      "image": "/images/tins/biryani-300g.jpg",
+      "specs": [
+        "PATTERN: PRINTED",
+        "MATERIAL: TIN",
+        "SHAPE: ROUND",
+        "CAPACITY: 300 ML"
+      ],
+      "price": "₹35/Piece",
+      "bestSeller": true,
+      "description": "300g Printed Biryani Tin Containers from Sri Padmavathi Industries, Chennai. Listed at ₹35/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "5-kg-printed-biryani-tin-container",
+      "name": "5 Kg Printed Biryani Tin Container",
+      "category": "Biryani Tin Containers",
+      "image": "/images/tins/5-kg-printed-biryani-tin-container.jpg",
+      "specs": [
+        "USAGE: KITCHEN FOOD STORAGE",
+        "SHAPE: ROUND",
+        "SIZE: 9 INCH DIA x 5 INCH HEIGHT"
+      ],
+      "price": "₹125/Piece",
+      "bestSeller": false,
+      "description": "5 Kg Printed Biryani Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹125/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "500-grams-printed-biryani-tin-container",
+      "name": "500 Grams Printed Biryani Tin Container",
+      "category": "Biryani Tin Containers",
+      "image": "/images/tins/500-grams-printed-biryani-tin-container.jpg",
+      "specs": [
+        "USAGE: FOOD STORE",
+        "CAPACITY: 500 ML",
+        "APPLICATION: PACKAGING"
+      ],
+      "price": "₹36/Piece",
+      "bestSeller": false,
+      "description": "500 Grams Printed Biryani Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹36/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "750-gms-printed-biryani-tin-containers",
+      "name": "750 Gms Printed Biryani Tin Containers",
+      "category": "Biryani Tin Containers",
+      "image": "/images/tins/750-gms-printed-biryani-tin-containers.jpg",
+      "specs": [
+        "USAGE: KITCHEN FOOD STORAGE",
+        "SHAPE: ROUND",
+        "DIAMETER: 6 INCH"
+      ],
+      "price": "₹41/Piece",
+      "bestSeller": false,
+      "description": "750 Gms Printed Biryani Tin Containers from Sri Padmavathi Industries, Chennai. Listed at ₹41/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "tube-shape-printed-biryani-tin-container",
+      "name": "Tube Shape Printed Biryani Tin Container",
+      "category": "Biryani Tin Containers",
+      "image": "/images/tins/tube-shape-printed-biryani-tin-container.jpg",
+      "specs": [
+        "SHAPE: TUBE",
+        "PATTERN: PRINTED",
+        "MATERIAL: TIN"
+      ],
+      "price": "₹35/Piece",
+      "bestSeller": false,
+      "description": "Tube Shape Printed Biryani Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹35/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "1l-synthetic-enamel-tin-container",
+      "name": "1L Synthetic Enamel Tin Container",
+      "category": "Paint Tin Containers",
+      "image": "/images/tins/1l-synthetic-enamel-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 1 LITRE",
+        "APPLICATION: ENAMEL PAINT",
+        "SHAPE: ROUND"
+      ],
+      "price": "₹24/Piece",
+      "bestSeller": false,
+      "description": "1L Synthetic Enamel Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹24/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "2l-paint-tin-container",
+      "name": "2L Paint Tin Container",
+      "category": "Paint Tin Containers",
+      "image": "/images/tins/2l-paint-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 2 LITRE",
+        "SHAPE: ROUND",
+        "STORING: PAINT"
+      ],
+      "price": "₹38/Piece",
+      "bestSeller": false,
+      "description": "2L Paint Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹38/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "500ml-paint-tin-container",
+      "name": "500ml Paint Tin Container",
+      "category": "Paint Tin Containers",
+      "image": "/images/tins/500ml-paint-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 500 ML",
+        "APPLICATION: PAINT",
+        "SHAPE: CYLINDRICAL"
+      ],
+      "price": "₹24/Piece",
+      "bestSeller": false,
+      "description": "500ml Paint Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹24/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "700ml-paint-tin-container",
+      "name": "700ml Paint Tin Container",
+      "category": "Paint Tin Containers",
+      "image": "/images/tins/700ml-paint-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 700 ML",
+        "SHAPE: ROUND",
+        "COLOR: SILVER"
+      ],
+      "price": "₹18/Piece",
+      "bestSeller": false,
+      "description": "700ml Paint Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹18/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "customized-synthetic-enamel-paint-tin-container",
+      "name": "Customized Synthetic Enamel Paint Tin Container",
+      "category": "Paint Tin Containers",
+      "image": "/images/tins/customized-synthetic-enamel-paint-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 250 ML",
+        "SHAPE: ROUND",
+        "COLOR: MULTICOLOUR"
+      ],
+      "price": "₹24/Piece",
+      "bestSeller": false,
+      "description": "Customized Synthetic Enamel Paint Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹24/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "paint-coated",
+      "name": "Paint Coated Tin Container",
+      "category": "Paint Tin Containers",
+      "image": "/images/tins/paint-coated.jpg",
+      "specs": [
+        "CAPACITY: 100 ML",
+        "SHAPE: CYLINDRICAL",
+        "COLOR: MULTICOLOUR"
+      ],
+      "price": "₹25/Piece",
+      "bestSeller": true,
+      "description": "Paint Coated Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹25/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "air-tight-printed-tin-container",
+      "name": "Air Tight Printed Tin Container",
+      "category": "Tin Containers",
+      "image": "/images/tins/air-tight-printed-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 100 ML",
+        "APPLICATION: PACKAGING",
+        "SHAPE: ROUND",
+        "PATTERN: PRINTED"
+      ],
+      "price": "₹32/Piece",
+      "bestSeller": false,
+      "description": "Air Tight Printed Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹32/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "coffee-tea-tin-container",
+      "name": "Coffee Tea Tin Container",
+      "category": "Tin Containers",
+      "image": "/images/tins/coffee-tea-tin-container.jpg",
+      "specs": [
+        "SIZE: 83 x 110 MM",
+        "CAPACITY: 500 GRAM",
+        "PACK: 6 PIECE"
+      ],
+      "price": "₹28/Piece",
+      "bestSeller": false,
+      "description": "Coffee Tea Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹28/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "ink-tin-container",
+      "name": "Ink Tin Container",
+      "category": "Tin Containers",
+      "image": "/images/tins/ink-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 1 KG",
+        "STORING: INK",
+        "SHAPE: ROUND"
+      ],
+      "price": "₹21/Piece",
+      "bestSeller": false,
+      "description": "Ink Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹21/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "organic-tea-tin-container",
+      "name": "Organic Tea Tin Container",
+      "category": "Tin Containers",
+      "image": "/images/tins/organic-tea-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 500 GM",
+        "MATERIAL: TINPLATE",
+        "SEAL: AIRTIGHT"
+      ],
+      "price": "₹37/Piece",
+      "bestSeller": false,
+      "description": "Organic Tea Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹37/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "packaging-tin-boxes",
+      "name": "Packaging Tin Boxes",
+      "category": "Tin Containers",
+      "image": "/images/tins/packaging-tin-boxes.jpg",
+      "specs": [
+        "SHAPE: ROUND",
+        "CAPACITY: 200 GM",
+        "MATERIAL: TINPLATE"
+      ],
+      "price": "₹30/Piece",
+      "bestSeller": false,
+      "description": "Packaging Tin Boxes from Sri Padmavathi Industries, Chennai. Listed at ₹30/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "pulses",
+      "name": "Pulses Tin Container",
+      "category": "Tin Containers",
+      "image": "/images/tins/pulses.jpg",
+      "specs": [
+        "USAGE: PULSES",
+        "SHAPE: CYLINDRICAL",
+        "CAPACITY: 100 GM"
+      ],
+      "price": "₹22/Piece",
+      "bestSeller": false,
+      "description": "Pulses Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹22/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "1kg-round-tin-box",
+      "name": "1Kg Round Tin Box",
+      "category": "Tin Box",
+      "image": "/images/tins/1kg-round-tin-box.jpg",
+      "specs": [
+        "CAPACITY: 1 KG",
+        "TINPLATE: 0.21 MM",
+        "FOOD GRADE: YES"
+      ],
+      "price": "₹65/Piece",
+      "bestSeller": false,
+      "description": "1Kg Round Tin Box from Sri Padmavathi Industries, Chennai. Listed at ₹65/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "250g-round-tin-box",
+      "name": "250g Round Tin Box",
+      "category": "Tin Box",
+      "image": "/images/tins/250g-round-tin-box.jpg",
+      "specs": [
+        "CAPACITY: 250 G",
+        "TINPLATE: 0.28 MM",
+        "FOOD GRADE: YES"
+      ],
+      "price": "₹30/Piece",
+      "bestSeller": false,
+      "description": "250g Round Tin Box from Sri Padmavathi Industries, Chennai. Listed at ₹30/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "500g-round-tin-box",
+      "name": "500g Round Tin Box",
+      "category": "Tin Box",
+      "image": "/images/tins/500g-round-tin-box.jpg",
+      "specs": [
+        "CAPACITY: 500 G",
+        "TINPLATE: 0.21 MM",
+        "FOOD GRADE: YES"
+      ],
+      "price": "₹40/Piece",
+      "bestSeller": false,
+      "description": "500g Round Tin Box from Sri Padmavathi Industries, Chennai. Listed at ₹40/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "chocolate-tin-box",
+      "name": "Chocolate Tin Box",
+      "category": "Tin Box",
+      "image": "/images/tins/chocolate-tin-box.jpg",
+      "specs": [
+        "SHAPE: ROUND",
+        "CAPACITY: 750 G",
+        "FOOD GRADE: YES"
+      ],
+      "price": "₹250/Piece",
+      "bestSeller": false,
+      "description": "Chocolate Tin Box from Sri Padmavathi Industries, Chennai. Listed at ₹250/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "kumkum-20g",
+      "name": "20gm Kumkum Tin Container",
+      "category": "Kumkum Box",
+      "image": "/images/tins/kumkum-20g.jpg",
+      "specs": [
+        "USAGE: COSMETIC",
+        "CAPACITY: 20 GRAMS",
+        "SHAPE: CYLINDRICAL"
+      ],
+      "price": "₹4/Piece",
+      "bestSeller": false,
+      "description": "20gm Kumkum Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹4/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "5gm-kumkum-tin-container",
+      "name": "5gm Kumkum Tin Container",
+      "category": "Kumkum Box",
+      "image": "/images/tins/5gm-kumkum-tin-container.jpg",
+      "specs": [
+        "USAGE: COSMETIC",
+        "CAPACITY: 5 GM",
+        "SHAPE: ROUND"
+      ],
+      "price": "₹3.25/Piece",
+      "bestSeller": false,
+      "description": "5gm Kumkum Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹3.25/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "250ml-ghee-tin-container",
+      "name": "250ml Ghee Tin Container",
+      "category": "Oil & Ghee Tin Containers",
+      "image": "/images/tins/250ml-ghee-tin-container.jpg",
+      "specs": [
+        "CAPACITY: 250 ML",
+        "APPLICATION: GHEE PACKAGING",
+        "SHAPE: CYLINDRICAL"
+      ],
+      "price": "₹29/Piece",
+      "bestSeller": false,
+      "description": "250ml Ghee Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹29/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "ghee-oil",
+      "name": "500ml Ghee Tin Container",
+      "category": "Oil & Ghee Tin Containers",
+      "image": "/images/tins/ghee-oil.jpg",
+      "specs": [
+        "CAPACITY: 500 ML",
+        "FINISH: POLISHED",
+        "PACK: FOOD GRADE"
+      ],
+      "price": "₹33/Piece",
+      "bestSeller": false,
+      "description": "500ml Ghee Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹33/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "cake-custom",
+      "name": "Customize Cake Tin Container",
+      "category": "Customized Tin Containers",
+      "image": "/images/tins/cake-custom.jpg",
+      "specs": [
+        "CAPACITY: 1000 GM",
+        "APPLICATION: FOOD",
+        "SHAPE: ROUND"
+      ],
+      "price": "₹32/Piece",
+      "bestSeller": false,
+      "description": "Customize Cake Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹32/Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "gift-tin-containers",
+      "name": "Gift Tin Containers",
+      "category": "Gift Tins",
+      "image": "/images/tins/gift-tin-containers.jpg",
+      "specs": [
+        "USAGE: RETURN GIFTS",
+        "SHAPE: CYLINDRICAL",
+        "PATTERN: PRINTED"
+      ],
+      "price": "₹30/Piece",
+      "bestSeller": false,
+      "description": "Gift Tin Containers from Sri Padmavathi Industries, Chennai. Listed at ₹30 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "food-cans",
+      "name": "Tin Food Cans",
+      "category": "Food Cans",
+      "image": "/images/tins/food-cans.jpg",
+      "specs": [
+        "APPLICATION: FOOD PACKAGING",
+        "MATERIAL: TINPLATE",
+        "SEAL: AIRTIGHT"
+      ],
+      "price": "₹24/Piece",
+      "bestSeller": true,
+      "description": "Tin Food Cans from Sri Padmavathi Industries, Chennai. Listed at ₹24 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "tin-canister-lid",
+      "name": "Tin Canister Lid",
+      "category": "Canister Lid",
+      "image": "/images/tins/tin-canister-lid.jpg",
+      "specs": [
+        "TYPE: CANISTER LID",
+        "MATERIAL: TINPLATE",
+        "FIT: ROUND CANS"
+      ],
+      "price": "₹20/Piece",
+      "bestSeller": false,
+      "description": "Tin Canister Lid from Sri Padmavathi Industries, Chennai. Listed at ₹20 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "printed-paint-tin-container",
+      "name": "Printed Paint Tin Container",
+      "category": "PVC Solvent Tins",
+      "image": "/images/tins/printed-paint-tin-container.jpg",
+      "specs": [
+        "APPLICATION: PAINT / SOLVENT",
+        "PATTERN: PRINTED",
+        "MATERIAL: TIN"
+      ],
+      "price": "₹10/Piece",
+      "bestSeller": false,
+      "description": "Printed Paint Tin Container from Sri Padmavathi Industries, Chennai. Listed at ₹10 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "round-tin-container-lid",
+      "name": "Round Tin Container Lid",
+      "category": "Container Lid",
+      "image": "/images/tins/round-tin-container-lid.jpg",
+      "specs": [
+        "TYPE: CONTAINER LID",
+        "SHAPE: ROUND",
+        "MATERIAL: TINPLATE"
+      ],
+      "price": "₹4/Piece",
+      "bestSeller": false,
+      "description": "Round Tin Container Lid from Sri Padmavathi Industries, Chennai. Listed at ₹4 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "5-inches-tinplate-lid",
+      "name": "5 Inches Tinplate lid",
+      "category": "Container Bottom",
+      "image": "/images/tins/5-inches-tinplate-lid.jpg",
+      "specs": [
+        "SIZE: 5 INCH",
+        "TYPE: LID / BOTTOM",
+        "MATERIAL: TINPLATE"
+      ],
+      "price": "₹9/Piece",
+      "bestSeller": false,
+      "description": "5 Inches Tinplate lid from Sri Padmavathi Industries, Chennai. Listed at ₹9 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "customized-cookies-tins",
+      "name": "Customized Cookies Tins",
+      "category": "Customized Cookies Tins",
+      "image": "/images/tins/customized-cookies-tins.jpg",
+      "specs": [
+        "APPLICATION: COOKIES",
+        "DESIGN: CUSTOM PRINTED",
+        "MATERIAL: TIN"
+      ],
+      "price": "₹42/Piece",
+      "bestSeller": false,
+      "description": "Customized Cookies Tins from Sri Padmavathi Industries, Chennai. Listed at ₹42 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "protein-powder-tin-can",
+      "name": "Protein Powder Tin Can",
+      "category": "Protein Powder Tin Can",
+      "image": "/images/tins/protein-powder-tin-can.jpg",
+      "specs": [
+        "APPLICATION: PROTEIN POWDER",
+        "MATERIAL: TINPLATE",
+        "SEAL: AIRTIGHT"
+      ],
+      "price": "₹22/Piece",
+      "bestSeller": false,
+      "description": "Protein Powder Tin Can from Sri Padmavathi Industries, Chennai. Listed at ₹22 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "square-tin-boxes",
+      "name": "Square Tin Boxes",
+      "category": "Square Tin Boxes",
+      "image": "/images/tins/square-tin-boxes.jpg",
+      "specs": [
+        "SHAPE: SQUARE",
+        "MATERIAL: TINPLATE",
+        "APPLICATION: GIFT / FOOD"
+      ],
+      "price": "₹50/Piece",
+      "bestSeller": false,
+      "description": "Square Tin Boxes from Sri Padmavathi Industries, Chennai. Listed at ₹50 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "tin-oil-can",
+      "name": "Tin Oil Can",
+      "category": "Tin Cans",
+      "image": "/images/tins/tin-oil-can.jpg",
+      "specs": [
+        "APPLICATION: OIL",
+        "MATERIAL: TINPLATE",
+        "SHAPE: CAN"
+      ],
+      "price": "₹10/Piece",
+      "bestSeller": false,
+      "description": "Tin Oil Can from Sri Padmavathi Industries, Chennai. Listed at ₹10 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "cosmetic-packaging-container",
+      "name": "Cosmetic Packaging Container",
+      "category": "Cosmetic Container",
+      "image": "/images/tins/cosmetic-packaging-container.jpg",
+      "specs": [
+        "APPLICATION: COSMETIC",
+        "MATERIAL: TIN",
+        "SHAPE: ROUND"
+      ],
+      "price": "₹3/Piece",
+      "bestSeller": false,
+      "description": "Cosmetic Packaging Container from Sri Padmavathi Industries, Chennai. Listed at ₹3 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "lip-balm-container",
+      "name": "Lip Balm Container",
+      "category": "Lip Balm Container",
+      "image": "/images/tins/lip-balm-container.jpg",
+      "specs": [
+        "APPLICATION: LIP BALM",
+        "MATERIAL: TIN",
+        "SHAPE: ROUND"
+      ],
+      "price": "₹10/Piece",
+      "bestSeller": false,
+      "description": "Lip Balm Container from Sri Padmavathi Industries, Chennai. Listed at ₹10 /Piece. Custom printing and bulk supply available."
+    },
+    {
+      "id": "sweets-tin-box",
+      "name": "Sweets Tin Box",
+      "category": "Sweets Tin Box",
+      "image": "/images/tins/sweets-tin-box.jpg",
+      "specs": [
+        "APPLICATION: SWEETS",
+        "MATERIAL: TINPLATE",
+        "FOOD GRADE: YES"
+      ],
+      "price": "₹110/Piece",
+      "bestSeller": false,
+      "description": "Sweets Tin Box from Sri Padmavathi Industries, Chennai. Listed at ₹110 /Piece. Custom printing and bulk supply available."
+    }
+  ]
+}

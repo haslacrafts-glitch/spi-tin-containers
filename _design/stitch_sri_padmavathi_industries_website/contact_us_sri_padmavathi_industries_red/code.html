@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | Sri Padmavathi Industries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;900&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=IBM+Plex+Sans:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "metallic-silver": "#E2E4E9",
+                        "on-background": "#1b1c1c",
+                        "surface-dim": "#dcd9d9",
+                        "primary": "#9e1000",
+                        "industrial-gray": "#F4F4F4",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary-container": "#146e67",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#171c24",
+                        "inverse-surface": "#303030",
+                        "trust-gold": "#C5A059",
+                        "surface-variant": "#e4e2e1",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "primary-fixed": "#ffdad4",
+                        "surface-container-high": "#eae8e7",
+                        "surface-container-low": "#f6f3f2",
+                        "outline-variant": "#c7c5d4",
+                        "on-tertiary-container": "#a5a9b4",
+                        "secondary-fixed": "#a2f1e7",
+                        "on-primary-fixed-variant": "#900e00",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#dfe2ee",
+                        "steel-blue": "#4A5568",
+                        "primary-fixed-dim": "#ffb4a6",
+                        "secondary": "#0a6a63",
+                        "on-tertiary-fixed-variant": "#424750",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-secondary-fixed": "#00201d",
+                        "on-primary": "#ffffff",
+                        "background": "#fbf9f8",
+                        "on-primary-container": "#ffaa9b",
+                        "on-surface-variant": "#464652",
+                        "surface-container-highest": "#e4e2e1",
+                        "on-primary-fixed": "#3f0300",
+                        "tertiary-container": "#3a3e47",
+                        "outline": "#777683",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#730900",
+                        "surface-bright": "#fbf9f8",
+                        "surface": "#fbf9f8",
+                        "secondary-fixed-dim": "#86d4cb",
+                        "tertiary": "#242831",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#9feee5",
+                        "inverse-primary": "#ffb4a6",
+                        "tertiary-fixed-dim": "#c2c6d2",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#b62410"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "caption": ["IBM Plex Sans"],
+                        "label-mono": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["IBM Plex Sans"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["IBM Plex Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-grid {
+            background-size: 40px 40px;
+            background-image: radial-gradient(circle, #E2E4E9 1px, transparent 1px);
+        }
+        .clip-slant {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md industrial-grid antialiased">
+<!-- TopAppBar Navigation Shell -->
+<header class="fixed top-0 z-50 w-full bg-surface/90 backdrop-blur-md border-b border-metallic-silver">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-title-md font-title-md font-bold text-primary">Sri Padmavathi Industries</span>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">Our Products</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">Photos</a>
+<a class="text-primary border-b-2 border-primary font-bold pb-1 font-body-md" href="#">Contact Us</a>
+</nav>
+<div class="hidden lg:flex items-center gap-4">
+<button class="px-4 py-2 border border-steel-blue text-steel-blue font-label-mono text-caption uppercase hover:bg-steel-blue hover:text-white transition-all">View Mobile Number</button>
+<button class="px-4 py-2 bg-primary text-on-primary font-label-mono text-caption uppercase hover:bg-primary-container transition-all">Contact Supplier</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-section-gap">
+<!-- Hero Section / Title -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="flex flex-col gap-2">
+<span class="font-label-mono text-primary uppercase tracking-widest">Connect with us</span>
+<h1 class="font-headline-lg text-headline-lg lg:font-display-lg lg:text-display-lg text-on-background">Let's build a lasting partnership.</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl">Reach out for custom tin container solutions, technical specifications, or bulk order inquiries. Our experts are ready to assist with your industrial packaging needs.</p>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Contact Form Card -->
+<div class="lg:col-span-7 bg-white border border-metallic-silver p-8 lg:p-12">
+<h2 class="font-title-md text-title-md mb-8 text-primary uppercase tracking-tight">Inquiry Form</h2>
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-caption text-steel-blue uppercase">Full Name</label>
+<input class="w-full border border-steel-blue bg-white px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-none outline-none" placeholder="Your Name" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-caption text-steel-blue uppercase">Email Address</label>
+<input class="w-full border border-steel-blue bg-white px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-none outline-none" placeholder="email@company.com" type="email"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-caption text-steel-blue uppercase">Phone Number</label>
+<input class="w-full border border-steel-blue bg-white px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-none outline-none" placeholder="+91 00000 00000" type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-caption text-steel-blue uppercase">Product Interest</label>
+<select class="w-full border border-steel-blue bg-white px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-none outline-none appearance-none">
+<option>Select Product Type</option>
+<option>Biryani Tin Containers</option>
+<option>Paint Tin Containers</option>
+<option>Ghee Tin Containers</option>
+<option>Gift Tin Boxes</option>
+<option>Custom Industrial Cans</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-mono text-caption text-steel-blue uppercase">Message / Requirements</label>
+<textarea class="w-full border border-steel-blue bg-white px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-none outline-none" placeholder="Briefly describe your requirements..." rows="4"></textarea>
+</div>
+<button class="w-full md:w-auto px-10 py-4 bg-primary text-on-primary font-label-mono text-body-md uppercase hover:bg-primary-container transition-all flex items-center justify-center gap-3" type="submit">
+                            Send Message
+                            <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+<!-- Info Sidebar -->
+<div class="lg:col-span-5 space-y-gutter">
+<!-- Contact Details Card -->
+<div class="bg-industrial-gray border border-metallic-silver p-8">
+<h3 class="font-title-md text-title-md mb-6 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">factory</span>
+                            Headquarters
+                        </h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-bold text-on-background">Chennai, Tamil Nadu</p>
+<p class="text-on-surface-variant text-body-md">Plot No. 12, Industrial Estate, Sriperumbudur, Chennai - 602105</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">person</span>
+<div>
+<p class="font-bold text-on-background">R Sugumar (MD)</p>
+<p class="text-on-surface-variant text-body-md">Managing Director</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">call</span>
+<div>
+<p class="font-bold text-on-background">+91 98400 00000</p>
+<p class="text-primary text-caption font-bold opacity-80">78% Call Response Rate</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<p class="font-bold text-on-background">Business Hours</p>
+<p class="text-on-surface-variant text-body-md">Mon - Sat: 09:00 AM - 06:00 PM</p>
+<p class="text-on-surface-variant text-body-md">Sunday: Closed</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-metallic-silver flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center border border-steel-blue text-steel-blue hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<button class="flex-1 px-4 py-2 border border-primary text-primary font-label-mono text-caption uppercase hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+                                Whatsapp
+                            </button>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="relative h-64 border border-metallic-silver overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-high flex items-center justify-center grayscale contrast-125 brightness-90" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs26TO8D_GfOR6GG26KVxN1vOp_MLSFYk51_Rkr88OS60bxbCqEudM2nEOeIMp0EI55b8htOSQky4yZk2_eY9b1TqJxMYk8WIaXBhixQhoMObDZR7WQpj0BZ5XhY8ZAhoOTHlAF9pUYD9AFyEyJ4bT9_b-QnCiOx9kCb3Kc0s9a0zhCFPYNypLGbSrjkPzpMrnNM5uhD-G3IBwnMLw1WgF5PR0rlwMhmJcRb2B5HaIIrpqoNApDwDYNk26K4ymofXi5GGY_s92gPev')">
+<!-- Overlay Pin for Red Branding -->
+<div class="absolute z-10 text-primary">
+<span class="material-symbols-outlined text-5xl drop-shadow-md" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur p-3 border border-metallic-silver flex justify-between items-center">
+<span class="text-caption font-label-mono text-primary">LOCATION: CHENNAI, TN</span>
+<button class="text-primary flex items-center gap-1 text-caption font-bold hover:underline">
+                                OPEN MAPS <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Social & Trust Section -->
+<section class="mt-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="bg-primary text-on-primary p-12 relative overflow-hidden">
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+<div class="col-span-2">
+<h2 class="font-headline-lg text-headline-lg mb-4">Trusted by 500+ Industrial Partners</h2>
+<p class="text-primary-fixed opacity-80 max-w-xl">Join a network of manufacturers who rely on Sri Padmavathi Industries for precision-engineered tin packaging solutions.</p>
+</div>
+<div class="flex md:justify-end gap-6">
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-white">verified</span>
+</div>
+<span class="font-label-mono text-caption">ISO Certified</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-white">workspace_premium</span>
+</div>
+<span class="font-label-mono text-caption">Industry Leader</span>
+</div>
+</div>
+</div>
+<!-- Subtle geometric background decoration -->
+<div class="absolute top-0 right-0 w-64 h-64 border-4 border-white/5 -mr-32 -mt-32 rotate-45"></div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-industrial-gray border-t-4 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="md:col-span-5 space-y-6">
+<span class="text-headline-lg font-headline-lg font-black text-primary">SPI</span>
+<p class="text-on-surface-variant max-w-md">Leading manufacturer and wholesaler of high-quality tin containers for food, industrial, and decorative applications since 2009.</p>
+<div class="flex gap-4">
+<a class="text-primary hover:opacity-70 transition-opacity" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-primary hover:opacity-70 transition-opacity" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+<a class="text-primary hover:opacity-70 transition-opacity" href="#">
+<span class="material-symbols-outlined">link</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-3 space-y-4">
+<h4 class="font-title-md text-title-md text-primary font-bold uppercase tracking-tight">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:underline font-body-md" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:underline font-body-md" href="#">Our Products</a></li>
+<li><a class="text-on-surface-variant hover:underline font-body-md" href="#">Photos</a></li>
+<li><a class="text-primary font-bold underline font-body-md" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="md:col-span-4 space-y-4">
+<h4 class="font-title-md text-title-md text-primary font-bold uppercase tracking-tight">Legal &amp; Compliance</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:underline font-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:underline font-body-md" href="#">Terms of Use</a></li>
+<li class="font-label-mono text-caption text-steel-blue pt-4">GST NO: 33*********1ZZ</li>
+</ul>
+</div>
+</div>
+<div class="bg-white py-6 border-t border-metallic-silver">
+<div class="px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-mono text-caption text-on-surface-variant">© 2024 Sri Padmavathi Industries. All Rights Reserved.</p>
+<div class="flex items-center gap-4 grayscale opacity-60">
+<img class="h-6" data-alt="Small IndiaMART verified seller logo icon on a white background, minimalist industrial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7_VVxQmeCMzUyfVmteyjuYGNomztzpuPSKltPnBm8wV-XCa1YsrI_O2zLtjEBGFz_501nhgolOlk-UpbKnhEqwiaDthyOLfdS1RdRAUP-ilxoBktyuK5KKiRGDzI6k9fTrUXUYa5nyHDDfoRPEzR1hLdhoM2j3bIS5L3gjBkkVddEP-Z1yIBSZGmVfaPI5rcp3T5b3U-SfsiTCgj_HJqnWy8HcL56xMdEh5IFkkLE1PIpVqTgQzdm03E4M4631Br2xTeSzxcqQXj9"/>
+<span class="font-label-mono text-[10px] text-steel-blue">Designed &amp; Maintained by IndiaMART</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile Sticky Actions -->
+<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-metallic-silver p-4 flex gap-4">
+<button class="flex-1 py-3 border border-primary text-primary font-label-mono text-caption uppercase flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">call</span>
+            Call
+        </button>
+<button class="flex-1 py-3 bg-primary text-on-primary font-label-mono text-caption uppercase flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+            Inquire
+        </button>
+</div>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('input, select, textarea').forEach(element => {
+            element.addEventListener('focus', () => {
+                element.parentElement.querySelector('label').classList.replace('text-steel-blue', 'text-primary');
+            });
+            element.addEventListener('blur', () => {
+                element.parentElement.querySelector('label').classList.replace('text-primary', 'text-steel-blue');
+            });
+        });
+
+        // Form submission prevention for demo
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your interest! Our team will contact you shortly.');
+        });
+    </script>
+</body></html>

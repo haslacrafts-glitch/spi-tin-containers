@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sri Padmavathi Industries | Industrial Tin Packaging</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f0eded",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#363738",
+                    "surface-dim": "#dcd9d9",
+                    "outline-variant": "#e3beb7",
+                    "error-container": "#ffdad6",
+                    "secondary": "#5f5e5e",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "secondary-container": "#e4e2e1",
+                    "primary-container": "#9e1000",
+                    "on-tertiary-container": "#bfbfc0",
+                    "inverse-surface": "#313030",
+                    "surface": "#fcf9f8",
+                    "on-surface-variant": "#5b403b",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#656464",
+                    "primary-fixed": "#ffdad4",
+                    "on-primary-fixed-variant": "#900e00",
+                    "primary-fixed-dim": "#ffb4a6",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "outline": "#8f706a",
+                    "inverse-primary": "#ffb4a6",
+                    "surface-container-low": "#f6f3f2",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#3f0300",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-variant": "#e5e2e1",
+                    "primary": "#730900",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "secondary-fixed": "#e4e2e1",
+                    "on-background": "#1c1b1b",
+                    "tertiary-container": "#4c4e4f",
+                    "inverse-on-surface": "#f3f0ef",
+                    "background": "#fcf9f8",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-container": "#ffaa9b",
+                    "surface-tint": "#b62410",
+                    "surface-container-high": "#eae7e7",
+                    "surface-bright": "#fcf9f8",
+                    "industrial-gray": "#262626"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "32px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "margin-mobile": "16px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["IBM Plex Sans"],
+                    "body-sm": ["IBM Plex Sans"],
+                    "body-md": ["IBM Plex Sans"],
+                    "headline-lg-mobile": ["IBM Plex Sans"],
+                    "label-sm": ["JetBrains Mono"],
+                    "label-md": ["JetBrains Mono"],
+                    "headline-md": ["IBM Plex Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["10px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .industrial-grid {
+            background-size: 20px 20px;
+            background-image: radial-gradient(circle, #d1d1d1 1px, transparent 1px);
+        }
+        .active-nav-underline {
+            position: relative;
+        }
+        .active-nav-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #730900;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed-dim">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-surface-variant px-margin-mobile py-4 flex justify-between items-center">
+<div class="text-primary font-bold text-headline-md tracking-tight">
+            Sri Padmavathi Industries
+        </div>
+<button class="text-primary p-1 active:scale-95 transition-transform" id="mobile-menu-trigger">
+<span class="material-symbols-outlined" style="font-size: 32px;">menu</span>
+</button>
+</header>
+<!-- Sidebar / Mobile Menu Overlay (Hidden by default) -->
+<div class="fixed inset-0 z-[60] hidden" id="mobile-menu">
+<div class="absolute inset-0 bg-on-background/50 backdrop-blur-sm" id="menu-overlay"></div>
+<nav class="absolute top-0 right-0 h-full w-4/5 bg-surface-container-lowest p-margin-mobile flex flex-col gap-6 shadow-xl">
+<div class="flex justify-between items-center border-b border-outline-variant pb-4">
+<span class="font-headline-md text-primary">Menu</span>
+<button class="text-secondary" id="close-menu">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<ul class="flex flex-col gap-4">
+<li><a class="text-primary font-bold text-headline-md active-nav-underline" href="#">Home</a></li>
+<li><a class="text-on-surface-variant text-headline-md hover:text-primary transition-colors" href="#">Our Products</a></li>
+<li><a class="text-on-surface-variant text-headline-md hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant text-headline-md hover:text-primary transition-colors" href="#">Photos</a></li>
+<li><a class="text-on-surface-variant text-headline-md hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+<div class="mt-auto flex flex-col gap-3">
+<button class="w-full bg-primary-container text-on-primary font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
+                    Contact Supplier
+                </button>
+<button class="w-full bg-industrial-gray text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center gap-2 active:scale-[0.98] transition-all">
+                    View Mobile Number
+                </button>
+</div>
+</nav>
+</div>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-surface-container-low px-margin-mobile pt-10 pb-16 industrial-grid">
+<div class="relative z-10">
+<span class="inline-block bg-primary text-on-primary font-label-md px-2 py-1 mb-4 rounded-sm tracking-widest uppercase">ESTD 2009</span>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-on-background mb-4 leading-tight">
+                    Excellence in <span class="text-primary">Tin Packaging</span> Since 2009
+                </h1>
+<p class="text-body-md text-secondary mb-8 max-w-[90%]">
+                    Precision engineering for food-grade tin containers. Partnering with India's leading culinary brands to ensure freshness and durability.
+                </p>
+<div class="flex flex-col gap-4">
+<button class="bg-primary text-on-primary py-4 px-6 font-bold flex items-center justify-between group">
+                        EXPLORE PRODUCTS
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="mt-12 relative h-48 w-full border border-outline-variant bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover grayscale-[0.2]" data-alt="A macro close-up photograph of high-quality metallic food grade tin cans stacked in a structured industrial arrangement. The lighting is crisp and cold, emphasizing the polished steel texture and the precision-engineered seams of the packaging. The color palette is dominated by metallic silver and steel blues with a sharp corporate feel. Minimalist industrial environment in the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr-X4Xm4wCkOMfK7eJieJ0RQz6_nMn6FgeYAqMiKFHhI3_n3YrId-EIootxMU_Btq5RvatlRqXCjHew7ASCYam21aasQOM8sJ-MvAjUCtWpbEzWCI9Aa5zB7I8Mr3e3K1cgEq1X0s-srNRc37fiV5lRhDtjM8b1fd46NHpXzlnHGDEDVcbkpUZLpOy_qmTc4I6SfcEXEEOhR_cXShogEyK1cJhnQMimNENZaoBXs2mnDkL4DBmc-DtOHCEfw01Q1bmj6c8xab4k_ZY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low/80 to-transparent"></div>
+</div>
+</section>
+<!-- Quick Stats -->
+<section class="bg-industrial-gray py-8 px-margin-mobile grid grid-cols-2 gap-gutter text-white">
+<div class="border-l-2 border-primary pl-4">
+<div class="font-headline-md font-black text-primary">15+</div>
+<div class="font-label-sm uppercase text-surface-variant">Years Experience</div>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<div class="font-headline-md font-black text-primary">500+</div>
+<div class="font-label-sm uppercase text-surface-variant">Active Clients</div>
+</div>
+<div class="border-l-2 border-primary pl-4 mt-4">
+<div class="font-headline-md font-black text-primary">24/7</div>
+<div class="font-label-sm uppercase text-surface-variant">Production</div>
+</div>
+<div class="border-l-2 border-primary pl-4 mt-4">
+<div class="font-headline-md font-black text-primary">100%</div>
+<div class="font-label-sm uppercase text-surface-variant">Food Grade</div>
+</div>
+</section>
+<!-- Our Core Products -->
+<section class="py-16 px-margin-mobile bg-white">
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="text-primary font-label-md uppercase tracking-tighter">Inventory</span>
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile">Core Products</h2>
+</div>
+<a class="text-primary font-label-md border-b border-primary pb-1" href="#">VIEW ALL</a>
+</div>
+<div class="space-y-8">
+<!-- Product Card 1 -->
+<div class="border border-outline-variant rounded-lg overflow-hidden flex flex-col group">
+<div class="h-56 bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional studio product shot of several ornate, cylindrical biryani tin containers with vibrant traditional Indian patterns. The containers are polished, reflecting soft studio lights that highlight their metallic durability and premium finish. Set against a clean, minimalist off-white background to evoke a sense of high-end food service packaging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDePsC4DRUriTuxtNbaJWaK8lepDKtZndRDKTh1CBmxdMaCSVY4Ee6TkJ8ucvb2tFOczd2jsWwFiaZZ7M7dq-O3QPDjxpJTz0S6CPc1mJ5IL4iL8HA9OOkT9iWmI1nk9AyRjyxRoopQ7YAiC0NZxQc-x4dixVZ-1aveiIGsgCH3roZs0P0X2mQp-X3cMlP_IeV5xt8KqYLpYX0bslDw7yYy0GPJtKM2so7ALz3uqcD37no6vyZfooNIZFbYDCopm9A75vj5EpTZ83ej"/>
+<div class="absolute top-4 right-4 bg-white/90 px-3 py-1 text-on-surface font-label-sm rounded-sm">BESTSELLER</div>
+</div>
+<div class="p-6">
+<h3 class="text-headline-md font-bold mb-2">Biryani Tins</h3>
+<p class="text-body-sm text-secondary mb-4">Airtight, moisture-resistant packaging designed specifically for premium culinary transport.</p>
+<ul class="text-label-md text-on-surface-variant space-y-2 mb-6">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span> Customizable Printing</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span> Heat Retention Design</li>
+</ul>
+<button class="w-full py-3 border-2 border-industrial-gray font-bold hover:bg-industrial-gray hover:text-white transition-colors">SPECIFICATIONS</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="border border-outline-variant rounded-lg overflow-hidden flex flex-col group">
+<div class="h-56 bg-surface-variant relative overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A group of various sized industrial food cans made of high-quality tinplate, arranged in a clean, modern geometric composition. The metal surfaces are pristine and sterile, reflecting a bright, clinical lighting setup that underscores food safety standards. The setting is a modern industrial lab or showroom with a palette of metallic silver, white, and subtle red accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj3g8RLAaLUUEVyFYz0w6X_vQ0xVo6mpt2xQy9edDGOKKWezefu_xmuVEon2RPrUi5cxjjocyQx8Gj9o15KlXIj5s1j1YVN98ju1rpza_oZPoESAYBs-y7v6DwYGkujVcDudNgjkl3RB8abjLedI6N5ixlepj6Z9N5nnXT22qz6vFyFMgFGpFPXU6FRHdhBd0fF11w4rPF2D7WtoTARyidVAjKIk_PzJlLBrGJaMJXfu4aOtawGRq8tv1LjWnT6Nvyi_8we3lRUzQx"/>
+<div class="absolute top-4 right-4 bg-white/90 px-3 py-1 text-on-surface font-label-sm rounded-sm">FOOD GRADE</div>
+</div>
+<div class="p-6">
+<h3 class="text-headline-md font-bold mb-2">Food Cans</h3>
+<p class="text-body-sm text-secondary mb-4">Precision-seamed containers for processed foods, dairy, and confectionery products.</p>
+<ul class="text-label-md text-on-surface-variant space-y-2 mb-6">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span> Corrosion Resistant</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[14px] text-primary">check_circle</span> Multiple Volume Sizes</li>
+</ul>
+<button class="w-full py-3 border-2 border-industrial-gray font-bold hover:bg-industrial-gray hover:text-white transition-colors">SPECIFICATIONS</button>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Summary -->
+<section class="py-16 px-margin-mobile bg-surface-container-low border-y border-outline-variant relative overflow-hidden">
+<div class="absolute -right-16 top-0 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined" style="font-size: 200px;">factory</span>
+</div>
+<div class="relative z-10">
+<span class="text-primary font-label-md uppercase tracking-widest block mb-2">Our Legacy</span>
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile mb-6">Built on Quality &amp; Trust</h2>
+<div class="bg-white p-6 border-l-4 border-primary shadow-sm mb-6">
+<p class="text-body-md text-on-surface italic">
+                        "For over a decade, we have been at the forefront of the tin manufacturing industry, delivering packaging solutions that combine structural integrity with aesthetic appeal."
+                    </p>
+</div>
+<p class="text-body-md text-secondary mb-8">
+                    Sri Padmavathi Industries specializes in high-volume production of premium tinplate containers. Our facility utilizes state-of-the-art machinery to ensure every unit meets international quality standards.
+                </p>
+<button class="bg-industrial-gray text-white py-4 px-8 font-bold flex items-center gap-3">
+                    READ OUR STORY
+                    <span class="material-symbols-outlined">info</span>
+</button>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-margin-mobile bg-primary text-on-primary text-center">
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile mb-4">Ready to upgrade your packaging?</h2>
+<p class="text-body-md opacity-90 mb-10 max-w-xs mx-auto">
+                Get a customized quote for your business needs today. Our experts are ready to assist.
+            </p>
+<div class="flex flex-col gap-4">
+<button class="bg-white text-primary font-black py-5 px-8 rounded-sm text-headline-md shadow-lg active:scale-95 transition-transform">
+                    GET A QUOTE
+                </button>
+<button class="border border-white/40 text-white font-bold py-4 px-8 rounded-sm hover:bg-white/10 transition-colors">
+                    CONTACT SALES
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-industrial-gray text-surface-variant py-12 px-margin-mobile border-t-4 border-primary">
+<div class="mb-12">
+<div class="text-primary font-black text-headline-lg mb-4">Sri Padmavathi Industries</div>
+<p class="text-body-sm opacity-70 mb-8 max-w-sm">
+                Leading manufacturer of premium tin containers and food-grade packaging solutions in India. Dedicated to quality since 2009.
+            </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-outline flex items-center justify-center rounded-sm hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</a>
+<a class="w-10 h-10 border border-outline flex items-center justify-center rounded-sm hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+<a class="w-10 h-10 border border-outline flex items-center justify-center rounded-sm hover:bg-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 mb-12">
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-label-md">Company</h4>
+<ul class="space-y-3 text-body-sm">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Our Products</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Photos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4 uppercase text-label-md">Legal</h4>
+<ul class="space-y-3 text-body-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Use</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline/30 pt-8 text-center">
+<p class="text-label-sm opacity-50">© 2024 Sri Padmavathi Industries. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+        // Mobile Menu Logic
+        const trigger = document.getElementById('mobile-menu-trigger');
+        const menu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-menu');
+        const overlay = document.getElementById('menu-overlay');
+
+        function toggleMenu() {
+            menu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        trigger.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Simple scroll reveal effect for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.border.border-outline-variant').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

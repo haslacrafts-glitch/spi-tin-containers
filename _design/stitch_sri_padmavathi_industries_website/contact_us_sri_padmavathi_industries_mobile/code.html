@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | Sri Padmavathi Industries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f0eded",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#363738",
+                    "surface-dim": "#dcd9d9",
+                    "outline-variant": "#e3beb7",
+                    "error-container": "#ffdad6",
+                    "secondary": "#5f5e5e",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "secondary-container": "#e4e2e1",
+                    "primary-container": "#9e1000",
+                    "on-tertiary-container": "#bfbfc0",
+                    "inverse-surface": "#313030",
+                    "surface": "#fcf9f8",
+                    "on-surface-variant": "#5b403b",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#656464",
+                    "primary-fixed": "#ffdad4",
+                    "on-primary-fixed-variant": "#900e00",
+                    "primary-fixed-dim": "#ffb4a6",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "outline": "#8f706a",
+                    "inverse-primary": "#ffb4a6",
+                    "surface-container-low": "#f6f3f2",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#3f0300",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-variant": "#e5e2e1",
+                    "primary": "#730900",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "secondary-fixed": "#e4e2e1",
+                    "on-background": "#1c1b1b",
+                    "tertiary-container": "#4c4e4f",
+                    "inverse-on-surface": "#f3f0ef",
+                    "background": "#fcf9f8",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1c1b1b",
+                    "surface-container-highest": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-primary-container": "#ffaa9b",
+                    "surface-tint": "#b62410",
+                    "surface-container-high": "#eae7e7",
+                    "surface-bright": "#fcf9f8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "32px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "margin-mobile": "16px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["IBM Plex Sans"],
+                    "body-sm": ["IBM Plex Sans"],
+                    "body-md": ["IBM Plex Sans"],
+                    "headline-lg-mobile": ["IBM Plex Sans"],
+                    "label-sm": ["JetBrains Mono"],
+                    "label-md": ["JetBrains Mono"],
+                    "headline-md": ["IBM Plex Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["10px", {"lineHeight": "14px", "fontWeight": "500"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .industrial-grid {
+            background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-surface border-b border-outline-variant px-margin-mobile py-4 flex justify-between items-center w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<h1 class="text-headline-md font-bold text-primary tracking-tight">Sri Padmavathi Industries</h1>
+</div>
+<button class="p-2 transition-all active:scale-95 text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="px-margin-mobile pt-8 pb-6 industrial-grid bg-surface-container-low border-b border-outline-variant">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest mb-2 block">Connect With Us</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background leading-tight mb-4">Let's build a lasting partnership</h2>
+<p class="text-body-sm text-secondary max-w-md">Our engineering experts are ready to assist with your industrial component requirements and manufacturing queries.</p>
+</section>
+<!-- Contact Form & Info Bento -->
+<div class="px-margin-mobile py-8 flex flex-col gap-8">
+<!-- Inquiry Form Card -->
+<section class="bg-surface-container-lowest border border-outline-variant p-6 rounded-lg">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">mail</span>
+<h3 class="font-headline-md text-on-surface">Direct Inquiry</h3>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-secondary uppercase block">Full Name</label>
+<input class="w-full bg-surface border border-outline-variant px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-on-surface" placeholder="Enter your name" type="text"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-secondary uppercase block">Corporate Email</label>
+<input class="w-full bg-surface border border-outline-variant px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-on-surface" placeholder="email@company.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-secondary uppercase block">Subject</label>
+<select class="w-full bg-surface border border-outline-variant px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-on-surface appearance-none">
+<option>Product Inquiry</option>
+<option>Custom Manufacturing</option>
+<option>Partnership Proposal</option>
+<option>Technical Support</option>
+</select>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-secondary uppercase block">Detailed Requirements</label>
+<textarea class="w-full bg-surface border border-outline-variant px-4 py-3 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-md text-on-surface resize-none" placeholder="Briefly describe your project or needs..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary py-4 rounded font-bold uppercase tracking-widest text-body-md transition-all active:scale-[0.98] hover:bg-primary flex items-center justify-center gap-2" type="submit">
+<span>Send Message</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</section>
+<!-- Headquarters Details Card -->
+<section class="bg-surface-container-high border border-outline-variant p-6 rounded-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 opacity-10 transform translate-x-8 -translate-y-8">
+<span class="material-symbols-outlined text-[120px] text-on-surface-variant">corporate_fare</span>
+</div>
+<h3 class="font-label-md text-label-md text-primary uppercase mb-6 tracking-widest">Headquarters</h3>
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="bg-primary-container/10 p-2 rounded h-fit">
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+<div>
+<p class="font-bold text-on-surface mb-1">Registered Address</p>
+<address class="not-italic text-body-sm text-secondary leading-relaxed">
+                                No. 42, Sidco Industrial Estate,<br/>
+                                Ambattur, Chennai - 600058,<br/>
+                                Tamil Nadu, India
+                            </address>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-primary-container/10 p-2 rounded h-fit">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div>
+<p class="font-bold text-on-surface mb-1">Contact Person</p>
+<p class="text-body-sm text-on-surface">R Sugumar</p>
+<p class="text-label-md text-secondary mt-1">Managing Director</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="bg-primary-container/10 p-2 rounded h-fit">
+<span class="material-symbols-outlined text-primary">call</span>
+</div>
+<div>
+<p class="font-bold text-on-surface mb-1">Phone Number</p>
+<a class="text-body-sm text-primary font-bold hover:underline" href="tel:+914426258888">+91 44 2625 8888</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Location Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-on-surface">Find us in Chennai</h3>
+<button class="text-label-md text-primary font-bold uppercase tracking-tighter flex items-center gap-1">
+                        Get Directions <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="w-full h-64 border border-outline-variant rounded-lg overflow-hidden relative group">
+<div class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="A clean, minimalist 3D isometric map view of a modern industrial zone in Chennai, featuring stylized factory buildings and neat roads. The lighting is bright and clear, reflecting a high-end corporate aesthetic with subtle red highlights for the location marker. The overall mood is precise and professional, matching an industrial manufacturing theme." data-location="Ambattur, Chennai, Tamil Nadu, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvq036mU6SiNMCcfoltFQlzdwr5S-7kEGRsWhLxmknPC-hc_Q9q_zdfmIwe_baYjkT37BazHEpLL6dri627otAv4k7Xr0YS8gsFHAJyd3rYP_LQr2C3zr8JTMpTny8kkU_fa0dp4Jb9LkmfBzxG9BOfI_nAL1Tu5SOE93QDKX3sb5CBJR8CjDVsCZilVhU4aErsYQuDdoDfrp_rdGlYvdnih_Y3ixz4McuG-VUcVtVbHx02KYES6r4TE0IvU5tgXAdJROaKhFlapeZ')">
+</div>
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+<div class="bg-primary text-on-primary p-3 rounded-full shadow-lg animate-bounce">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Trust Badges -->
+<section class="bg-surface-container px-margin-mobile py-8 border-t border-outline-variant flex overflow-x-auto no-scrollbar gap-8">
+<div class="flex-shrink-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span class="font-label-md text-label-md text-secondary uppercase">ISO 9001:2015</span>
+</div>
+<div class="flex-shrink-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">handyman</span>
+<span class="font-label-md text-label-md text-secondary uppercase">Precision Tools</span>
+</div>
+<div class="flex-shrink-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+<span class="font-label-md text-label-md text-secondary uppercase">24/7 Production</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-high border-t-4 border-primary px-margin-mobile pt-10 pb-8">
+<div class="flex flex-col gap-8">
+<div>
+<h2 class="font-headline-lg text-primary font-black mb-2">Sri Padmavathi Industries</h2>
+<p class="text-body-sm text-on-surface-variant leading-relaxed">Precision manufacturing solutions for the global industrial landscape. Engineered for performance.</p>
+</div>
+<nav class="grid grid-cols-2 gap-y-4">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Our Products</a>
+<a class="text-primary font-bold underline font-body-md" href="#">Contact Us</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Photos</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors" href="#">Terms of Use</a>
+</nav>
+<div class="pt-8 border-t border-outline-variant">
+<p class="font-label-sm text-label-sm text-secondary uppercase">© 2024 Sri Padmavathi Industries. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<!-- Back to Top Micro-Interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input, textarea, select');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.querySelector('label').classList.replace('text-secondary', 'text-primary');
+                });
+                input.addEventListener('blur', () => {
+                    input.parentElement.querySelector('label').classList.replace('text-primary', 'text-secondary');
+                });
+            });
+        });
+    </script>
+</body></html>
