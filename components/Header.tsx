@@ -50,12 +50,11 @@ export function Header() {
 
       <div className="max-w-container-max mx-auto h-14 lg:h-[4.25rem] px-4 md:px-margin-desktop flex items-center gap-6">
         <Link href="/" className="flex items-center gap-2.5 shrink-0 min-w-0">
-          <span
-            className="material-symbols-outlined text-primary text-[1.65rem] shrink-0"
-            style={{ fontVariationSettings: "'FILL' 1" }}
-          >
-            factory
-          </span>
+          <img
+            src="/images/spi-logo.png?v=2"
+            alt={COMPANY.name}
+            className="h-10 lg:h-12 w-auto shrink-0"
+          />
           <span className="min-w-0">
             <span className="block font-display font-bold text-primary text-[0.95rem] lg:text-base leading-tight truncate">
               {COMPANY.name}

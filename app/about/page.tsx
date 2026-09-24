@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { COMPANY, IMAGES } from "@/lib/data";
+import { COMPANY, IMAGES, WHY_US } from "@/lib/data";
 import { QuoteButton } from "@/components/QuoteButton";
 import { pageMeta } from "@/lib/seo";
 
@@ -29,32 +29,19 @@ export default function AboutPage() {
       </section>
 
       <section className="py-10 md:py-16 max-w-container-max mx-auto px-4 md:px-margin-desktop">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-          <div className="md:col-span-7">
-            <div className="mb-4">
-              <span className="font-mono text-label-mono text-primary uppercase tracking-widest">The Journey</span>
-              <div className="structural-line mt-2" />
-            </div>
-            <h2 className="font-display text-headline-lg-mobile md:text-headline-lg mb-8">Crafting Excellence in Chennai</h2>
-            <div className="space-y-6 text-body-md text-on-surface-variant leading-relaxed">
-              <p>
-                Founded in 2009 in the industrial heart of Tamil Nadu, <strong>Sri Padmavathi Industries</strong> is a tin manufacturer and wholesaler of paint tins, oil tins, ghee tins, biryani tins, and food cans. We supply custom printed tin containers to brands across India.
-              </p>
-              <p>
-                Under the visionary leadership of {COMPANY.md}, we have established ourselves as a trusted partner for diverse industries, ranging from food processing to luxury gifting. Our commitment to utilizing superior raw materials and state-of-the-art lithography ensures that every product leaving our facility is a testament to durability and design.
-              </p>
-            </div>
+        <div className="max-w-3xl">
+          <div className="mb-4">
+            <span className="font-mono text-label-mono text-primary uppercase tracking-widest">The Journey</span>
+            <div className="structural-line mt-2" />
           </div>
-          <div className="md:col-span-5 flex flex-col items-center">
-            <div className="relative w-full max-w-sm aspect-[4/5] border-8 border-industrial-gray overflow-hidden bg-surface-container-low flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary/25 text-[8rem]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                person
-              </span>
-              <div className="absolute bottom-0 left-0 right-0 bg-primary/90 p-6">
-                <h3 className="text-on-primary font-display text-title-md">{COMPANY.md}</h3>
-                <p className="text-on-primary-container font-mono text-label-mono uppercase">{COMPANY.mdTitle}</p>
-              </div>
-            </div>
+          <h2 className="font-display text-headline-lg-mobile md:text-headline-lg mb-8">Crafting Excellence in Chennai</h2>
+          <div className="space-y-6 text-body-md text-on-surface-variant leading-relaxed">
+            <p>
+              Founded in 2009 in the industrial heart of Tamil Nadu, <strong>Sri Padmavathi Industries</strong> is a tin manufacturer and wholesaler of paint tins, oil tins, ghee tins, biryani tins, and food cans. We supply custom printed tin containers to brands across India.
+            </p>
+            <p>
+              Under the visionary leadership of {COMPANY.md}, we have established ourselves as a trusted partner for diverse industries, ranging from food processing to luxury gifting. Our commitment to utilizing superior raw materials and state-of-the-art lithography ensures that every product leaving our facility is a testament to durability and design.
+            </p>
           </div>
         </div>
       </section>
@@ -67,10 +54,10 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 stagger">
             {[
-              { icon: "factory", label: "Nature of Business", value: "Manufacturer & Wholesaler" },
+              { icon: "factory", label: "Nature of Business", value: COMPANY.natureOfBusiness },
+              { icon: "badge", label: "Legal Status", value: COMPANY.legalStatus },
               { icon: "groups", label: "Workforce", value: COMPANY.workforce },
               { icon: "payments", label: "Annual Turnover", value: COMPANY.turnover },
-              { icon: "verified", label: "Certification", value: "Trust Seal Verified" },
             ].map((card) => (
               <div key={card.label} className="bg-surface p-8 border border-metallic-silver hover:border-primary transition-all group">
                 <span className="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform block">{card.icon}</span>
@@ -79,23 +66,37 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-primary text-on-primary p-6 md:p-8 flex items-center justify-between gap-4">
-              <div>
-                <div className="font-mono text-caption uppercase text-on-primary-container">Established Year</div>
-                <div className="font-display text-4xl md:text-display-lg">{COMPANY.established}</div>
-              </div>
-              <div className="text-right min-w-0">
-                <div className="font-mono text-caption uppercase text-on-primary-container">Location</div>
-                <div className="font-display text-base md:text-title-md">{COMPANY.city}</div>
-              </div>
-            </div>
-            <div className="bg-white p-6 md:p-8 border border-metallic-silver flex flex-col justify-center gap-2 min-w-0">
-              <div className="font-mono text-caption uppercase text-steel-blue">GSTIN</div>
-              <div className="font-mono text-base sm:text-lg md:text-xl font-semibold text-primary tracking-wide break-all">
-                {COMPANY.gst}
-              </div>
-            </div>
+          <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <dl className="bg-white border border-metallic-silver divide-y divide-metallic-silver">
+              {[
+                ["Additional Business", COMPANY.additionalBusiness.join(", ")],
+                ["Company CEO", COMPANY.md],
+                ["GST Partner", COMPANY.gstPartner],
+                ["Established", String(COMPANY.established)],
+                ["Employees", COMPANY.workforce],
+                ["Registered Address", COMPANY.registeredAddress],
+              ].map(([label, value]) => (
+                <div key={label} className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-1 sm:gap-4 p-4 md:px-6">
+                  <dt className="font-mono text-caption uppercase text-steel-blue">{label}</dt>
+                  <dd className="text-body-md text-on-background">{value}</dd>
+                </div>
+              ))}
+            </dl>
+            <dl className="bg-white border border-metallic-silver divide-y divide-metallic-silver">
+              {[
+                ["GSTIN", COMPANY.gst],
+                ["GST Registration", COMPANY.gstRegistrationDate],
+                ["Banker", COMPANY.banker],
+                ["Factory Address", COMPANY.address],
+                ["Payment Mode", COMPANY.paymentModes.join(", ")],
+                ["Shipment Mode", COMPANY.shipmentMode],
+              ].map(([label, value]) => (
+                <div key={label} className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-1 sm:gap-4 p-4 md:px-6">
+                  <dt className="font-mono text-caption uppercase text-steel-blue">{label}</dt>
+                  <dd className="text-body-md text-on-background font-mono sm:font-body break-words">{value}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>
@@ -139,15 +140,10 @@ export default function AboutPage() {
       <section className="py-10 md:py-16 bg-primary text-on-primary">
         <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter stagger">
-            {[
-              ["01", "Uncompromising Quality", "We utilize only the highest grade tinplate and food-safe coatings to ensure product longevity and safety for end consumers."],
-              ["02", "Cost Effectiveness", "Our vertically integrated manufacturing process allows us to offer competitive pricing without sacrificing structural integrity."],
-              ["03", "Large Capacity", "Equipped for scale, we handle bulk orders with strict adherence to timelines, serving as a reliable backbone for your supply chain."],
-            ].map(([n, title, copy]) => (
-              <div key={n} className="p-8 border-l border-on-primary-container/30">
-                <div className="font-display text-headline-lg mb-4">{n}</div>
-                <h3 className="font-display text-title-md mb-4 uppercase tracking-wider">{title}</h3>
-                <p className="text-on-primary-container/80 text-body-md">{copy}</p>
+            {WHY_US.map((point, i) => (
+              <div key={point} className="p-8 border-l border-on-primary-container/30">
+                <div className="font-display text-headline-lg mb-4">{String(i + 1).padStart(2, "0")}</div>
+                <h3 className="font-display text-title-md uppercase tracking-wider">{point}</h3>
               </div>
             ))}
           </div>

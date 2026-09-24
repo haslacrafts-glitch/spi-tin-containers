@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { CATEGORIES, PRODUCTS } from "@/lib/data";
+import { CATEGORIES } from "@/lib/data";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -18,7 +18,6 @@ export function ContactForm() {
     setError("");
     try {
       const selected = String(data.get("product") || "");
-      const match = PRODUCTS.find((p) => p.id === selected);
       const res = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -28,8 +27,8 @@ export function ContactForm() {
           phone: data.get("phone"),
           buyerType,
           companyName: buyerType === "company" ? data.get("companyName") : "",
-          product: match?.name || selected,
-          productId: match?.id || "",
+          product: selected,
+          productId: "",
           message: data.get("message"),
           origin: window.location.origin,
           website: data.get("website"),
@@ -113,19 +112,10 @@ export function ContactForm() {
           </label>
           <label className="flex flex-col gap-2">
             <span className="font-mono text-caption text-steel-blue uppercase">Product Interest</span>
-            <select name="product" className={`${field} appearance-none`}>
-              <option value="">Select Product</option>
+            <select name="product" className={field}>
+              <option value="">Select a category</option>
               {CATEGORIES.map((c) => (
-                <optgroup key={c} label={c}>
-                  {PRODUCTS.filter((p) => p.category === c).map((p) => (
-                    <option key={p.id} value={p.id}>
-                      {p.name} · {p.price}
-                    </option>
-                  ))}
-                </optgroup>
-              ))}
-              {CATEGORIES.map((c) => (
-                <option key={`cat-${c}`} value={c}>
+                <option key={c} value={c}>
                   {c}
                 </option>
               ))}
@@ -152,4 +142,4 @@ export function ContactForm() {
 }
 
 const field =
-  "w-full border border-steel-blue bg-white px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-none outline-none min-h-12";
+  "w-full border border-metallic-silver bg-white px-4 py-3 text-on-background focus:border-primary focus:ring-1 focus:ring-primary transition-all rounded-none outline-none min-h-12";

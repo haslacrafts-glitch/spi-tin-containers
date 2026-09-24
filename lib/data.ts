@@ -17,14 +17,23 @@ export const COMPANY = {
   hours: "Mon – Sat: 09:00 AM – 08:00 PM",
   sunday: "Sunday: Closed",
   gst: "33CZZPS5795L1ZZ",
+  gstRegistrationDate: "01 July 2017",
+  gstPartner: "Ramalingam Sugumar",
+  natureOfBusiness: "Manufacturer",
+  additionalBusiness: ["Factory / Manufacturing", "Wholesale Business"],
+  legalStatus: "Proprietorship",
+  registeredAddress: "No. 18, Anna Nagar, Chinnamathur Salai, Chennai - 600068, Tamil Nadu, India",
+  banker: "Kotak Mahindra",
+  paymentModes: ["Cash", "Cheque", "DD", "Credit Card", "Online", "Bank Transfer"],
+  shipmentMode: "By Road",
   established: 2009,
   years: "17+",
-  turnover: "₹4+ Cr",
+  turnover: "₹1.5 – 5 Cr",
   rating: "4.2",
-  ratingsCount: 55,
-  responseRate: "78%",
+  ratingsCount: 56,
+  responseRate: "83%",
   designs: "500+",
-  workforce: "20 to 40 Professionals",
+  workforce: "11 to 25 People",
   indiaMart: "https://www.indiamart.com/sripadmavathiindustries/",
   justdial:
     "https://www.justdial.com/jdmart/Chennai/Sri-Padmavathi-Industries-Manali/044PXX44-XX44-220702130534-H9R5_BZDET/catalogue/products#products-page",
@@ -106,6 +115,15 @@ export function specPairs(product: Product) {
   });
 }
 
+export const WHY_US = [
+  "Optimum quality products",
+  "Cost-effective price",
+  "Timely delivery",
+  "Competent and efficient team",
+  "Focused approach",
+  "Large production capacity",
+] as const;
+
 export const HSN_CODES = [
   { code: "73102190", description: "Cans which are to be closed by soldering or crimping — other" },
   { code: "73102990", description: "Other tins, cans, boxes of iron or steel, of a capacity < 50 L" },
@@ -146,10 +164,13 @@ export const PHOTOS = [
 ];
 
 export const IMAGES = {
-  hero: "/images/tins/gift-tin-containers.jpg",
+  hero: "/images/plant-hero.jpg",
   about: "/images/tins/air-tight-printed-tin-container.jpg",
   aboutHero: "/images/tins/biryani-1kg.jpg",
   warehouse: "/images/tins/1kg-round-tin-box.jpg",
   machine: "/images/tins/2l-paint-tin-container.jpg",
   print: "/images/tins/cake-custom.jpg",
+  foodCansDisplay: "/images/tins/food-cans-display.jpg",
+  brandingTin: "/images/tins/branding-tin.png",
+  bulkTin: "/images/tins/bulk-tin.png",
 };

@@ -23,8 +23,38 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <section className="px-4 md:px-margin-desktop max-w-container-max mx-auto mb-gutter">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div className="bg-industrial-gray border border-metallic-silver p-5 md:p-6">
+            <p className="font-mono text-caption uppercase text-steel-blue mb-2 flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary">badge</span>
+              GSTIN
+            </p>
+            <p className="font-mono text-body-md font-semibold text-on-background tracking-wide break-all">{COMPANY.gst}</p>
+            <p className="text-on-surface-variant text-caption mt-2">
+              {COMPANY.legalStatus} · GST from {COMPANY.gstRegistrationDate}
+            </p>
+          </div>
+          <div className="bg-industrial-gray border border-metallic-silver p-5 md:p-6">
+            <p className="font-mono text-caption uppercase text-steel-blue mb-2 flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary">payments</span>
+              Payment
+            </p>
+            <p className="text-body-md text-on-background">{COMPANY.paymentModes.join(" · ")}</p>
+          </div>
+          <div className="bg-industrial-gray border border-metallic-silver p-5 md:p-6">
+            <p className="font-mono text-caption uppercase text-steel-blue mb-2 flex items-center gap-2">
+              <span className="material-symbols-outlined text-primary">local_shipping</span>
+              Shipment
+            </p>
+            <p className="text-body-md text-on-background">{COMPANY.shipmentMode}</p>
+            <p className="text-on-surface-variant text-caption mt-2">Banker: {COMPANY.banker}</p>
+          </div>
+        </div>
+      </section>
+
       <section className="px-4 md:px-margin-desktop max-w-container-max mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
           <div className="lg:col-span-7">
             <ContactForm />
           </div>
@@ -84,13 +114,6 @@ export default function ContactPage() {
                         </a>
                       ))}
                     </div>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <span className="material-symbols-outlined text-primary">badge</span>
-                  <div className="min-w-0">
-                    <p className="font-bold text-on-background">GSTIN</p>
-                    <p className="text-on-surface-variant text-body-md font-mono tracking-wide break-all">{COMPANY.gst}</p>
                   </div>
                 </div>
               </div>

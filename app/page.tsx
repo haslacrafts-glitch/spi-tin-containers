@@ -96,8 +96,8 @@ export default function HomePage() {
               </div>
             </div>
             <div className="md:col-span-4 group flex flex-col bg-white border border-metallic-silver h-full">
-              <div className="flex-1 min-h-[180px] overflow-hidden bg-surface-container-low p-8">
-                <img className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" alt={food.name} src={food.image} />
+              <div className="flex-1 min-h-[180px] overflow-hidden bg-surface-container-low p-4">
+                <img className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" alt="Printed food and gift tin cans" src={IMAGES.foodCansDisplay} />
               </div>
               <div className="p-6 border-t border-metallic-silver">
                 <h3 className="font-display text-title-md font-bold mb-2">Food Cans</h3>
@@ -108,31 +108,41 @@ export default function HomePage() {
               </div>
             </div>
             <div className="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-gutter h-full">
-              <div className="bg-primary p-8 flex flex-col justify-between border border-primary-container text-white h-full">
-                <div>
-                  <h3 className="font-display text-title-md font-bold mb-4">Customized Branding</h3>
-                  <p className="text-primary-fixed opacity-90 text-body-md">
-                    We offer high-precision printing for your brand logos and designs directly on the tin surface.
-                  </p>
+              <div className="flex flex-col border border-metallic-silver h-full overflow-hidden">
+                <div className="flex-1 min-h-[180px] flex items-center justify-center p-6 bg-white">
+                  <img className="max-h-44 w-auto object-contain" alt="Custom printed gift tin" src={IMAGES.bulkTin} />
                 </div>
-                <div className="flex items-center gap-4 mt-8">
-                  <span className="material-symbols-outlined text-4xl">print</span>
-                  <span className="font-mono uppercase tracking-widest text-sm">Precision Offset</span>
+                <div className="p-8 bg-primary text-white flex flex-col justify-between gap-6">
+                  <div>
+                    <h3 className="font-display text-title-md font-bold mb-4 text-white">Customized Branding</h3>
+                    <p className="text-white text-body-md">
+                      We offer high-precision printing for your brand logos and designs directly on the tin surface.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-4 text-white">
+                    <span className="material-symbols-outlined text-4xl">print</span>
+                    <span className="font-mono uppercase tracking-widest text-sm">Precision Offset</span>
+                  </div>
                 </div>
               </div>
-              <div className="bg-industrial-gray p-8 flex flex-col justify-between border border-metallic-silver h-full">
-                <div>
-                  <h3 className="font-display text-title-md font-bold mb-4 text-on-background">Bulk Ordering</h3>
-                  <p className="text-on-surface-variant text-body-md">
-                    Optimized supply chain for large-scale industrial requirements with competitive B2B pricing.
-                  </p>
+              <div className="bg-industrial-gray flex flex-col border border-metallic-silver h-full">
+                <div className="flex-1 min-h-[180px] flex items-center justify-center p-6">
+                  <img className="max-h-44 w-auto object-contain" alt="Printed cookie tin for bulk orders" src={IMAGES.brandingTin} />
                 </div>
-                <QuoteButton
-                  prefill={{ product: "Bulk wholesale", message: "Need wholesale pricing for a bulk order." }}
-                  className="border border-primary text-primary px-4 py-2 font-mono font-bold uppercase mt-8 hover:bg-primary hover:text-white transition-all w-fit"
-                >
-                  Get Wholesale Pricing
-                </QuoteButton>
+                <div className="p-8 pt-0 flex flex-col justify-between gap-6">
+                  <div>
+                    <h3 className="font-display text-title-md font-bold mb-4 text-on-background">Bulk Ordering</h3>
+                    <p className="text-on-surface-variant text-body-md">
+                      Optimized supply chain for large-scale industrial requirements with competitive B2B pricing.
+                    </p>
+                  </div>
+                  <QuoteButton
+                    prefill={{ product: "Bulk wholesale", message: "Need wholesale pricing for a bulk order." }}
+                    className="border border-primary text-primary px-4 py-2 font-mono font-bold uppercase hover:bg-primary hover:text-white transition-all w-fit"
+                  >
+                    Get Wholesale Pricing
+                  </QuoteButton>
+                </div>
               </div>
             </div>
           </div>
