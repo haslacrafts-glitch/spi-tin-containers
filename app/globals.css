@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+html, body {
+  width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
 }
 
-body {
-  overflow-x: hidden;
+.page-enter {
+  width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
+  animation: page-in 0.45s ease both;
 }
 
 body.menu-open .mobile-tabbar {
@@ -92,13 +96,36 @@ img {
   }
 }
 
-.page-enter {
-  animation: page-in 0.45s ease both;
+.hero-scrim {
+  background: rgba(0, 0, 0, 0.72);
+}
+
+@media (min-width: 1024px) {
+  .hero-scrim {
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(0, 0, 0, 0.28)
+    );
+  }
 }
 
 .hero-media {
   animation: kenburns 18s ease-in-out alternate infinite;
   transform-origin: center;
+}
+
+@media (max-width: 767px) {
+  .hero-media {
+    animation: none;
+    transform: none;
+  }
+
+  .figma-dots {
+    background-image: none;
+    background-color: #fcf9f8;
+  }
 }
 
 .motion-on .reveal:not(.is-visible) {

@@ -48,16 +48,17 @@ export function Header() {
         </div>
       </div>
 
-      <div className="max-w-container-max mx-auto h-14 lg:h-[4.25rem] px-4 md:px-margin-desktop flex items-center gap-6">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0 min-w-0">
+      <div className="max-w-container-max mx-auto h-14 lg:h-[4.25rem] px-4 md:px-margin-desktop flex items-center gap-3 lg:gap-6">
+        <Link href="/" className="flex items-center gap-2 min-w-0 flex-1 lg:flex-none">
           <img
             src="/images/spi-logo.png?v=2"
-            alt={COMPANY.name}
-            className="h-10 lg:h-12 w-auto shrink-0"
+            alt=""
+            className="h-8 lg:h-12 w-auto shrink-0"
           />
           <span className="min-w-0">
-            <span className="block font-display font-bold text-primary text-[0.95rem] lg:text-base leading-tight truncate">
-              {COMPANY.name}
+            <span className="block font-display font-bold text-primary text-sm lg:text-base leading-tight truncate">
+              <span className="sm:hidden">SPI Tins</span>
+              <span className="hidden sm:inline">{COMPANY.name}</span>
             </span>
             <span className="hidden lg:block font-mono text-[10px] uppercase tracking-[0.16em] text-steel-blue">
               Tin manufacturers · Chennai

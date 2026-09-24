@@ -8,31 +8,33 @@ export default function HomePage() {
   const food = PRODUCTS.find((p) => p.id === "food-cans")!;
 
   return (
-    <main>
-      <section className="relative py-12 md:py-0 md:h-[62vh] md:min-h-[420px] flex items-center overflow-hidden bg-on-background">
-        <div className="absolute inset-0 opacity-40">
-          <div className="w-full h-full bg-cover bg-center hero-media" style={{ backgroundImage: `url('${IMAGES.hero}')` }} />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-on-background via-on-background/80 to-transparent" />
-        <div className="relative w-full max-w-container-max mx-auto px-4 md:px-margin-desktop z-10">
+    <main className="pb-24 md:pb-0">
+      <section className="relative w-full max-w-full overflow-hidden bg-black min-h-[22rem] md:min-h-[420px] md:h-[62vh]">
+        <img
+          src={IMAGES.hero}
+          alt=""
+          className="absolute inset-0 z-0 h-full w-full max-w-none object-cover object-[center_40%]"
+        />
+        <div className="hero-scrim absolute inset-0 z-[1] pointer-events-none" />
+        <div className="relative z-10 w-full max-w-container-max mx-auto px-4 md:px-margin-desktop py-8 md:py-0 md:h-full md:flex md:items-center">
           <div className="max-w-2xl">
-            <span className="text-primary-fixed-dim font-mono uppercase tracking-[0.2em] mb-3 block">
+            <span className="text-primary-fixed-dim font-mono uppercase tracking-[0.18em] mb-2 md:mb-3 block text-[11px] md:text-sm">
               Established {COMPANY.established}
             </span>
-            <h1 className="font-display text-[2rem] leading-tight md:text-display-lg text-white mb-4 md:mb-6 text-balance">
-              Tin Manufacturers in Chennai Since {COMPANY.established}
+            <h1 className="font-display text-[1.75rem] leading-tight md:text-display-lg text-white mb-3 md:mb-6 text-balance">
+              Tin manufacturers in Chennai
             </h1>
-            <p className="text-body-md md:text-body-lg text-surface-variant mb-6 md:mb-8 max-w-xl text-pretty">
-              Paint tin manufacturers, oil tin manufacturers, and food-grade tin container makers from Manali, Chennai. Custom printed biryani tins, ghee tins, and industrial packaging at bulk scale.
+            <p className="text-sm md:text-body-lg text-white/85 mb-5 md:mb-8 max-w-xl text-pretty">
+              Paint, oil, ghee, and biryani tins from Manali — custom print and bulk supply.
             </p>
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-2.5 sm:gap-4">
               <Link
                 href="/products"
-                className="bg-primary text-white px-8 py-4 font-mono font-bold uppercase tracking-widest hover:bg-primary-container transition-all text-center min-h-12 w-full sm:w-auto box-border"
+                className="bg-primary text-white px-6 py-3 md:px-8 md:py-4 font-mono font-bold uppercase tracking-widest hover:bg-primary-container transition-all text-center min-h-12 w-full sm:w-auto box-border"
               >
                 Explore Products
               </Link>
-              <QuoteButton className="border-2 border-white text-white px-8 py-4 font-mono font-bold uppercase tracking-widest hover:bg-white hover:text-on-background transition-all min-h-12 w-full sm:w-auto box-border">
+              <QuoteButton className="border-2 border-white text-white px-6 py-3 md:px-8 md:py-4 font-mono font-bold uppercase tracking-widest hover:bg-white hover:text-on-background transition-all min-h-12 w-full sm:w-auto box-border">
                 Get a Quote
               </QuoteButton>
             </div>
@@ -40,68 +42,81 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-6 md:py-10 bg-industrial-gray border-b border-metallic-silver">
+      <section className="py-4 md:py-10 bg-industrial-gray border-b border-metallic-silver">
         <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter stagger">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-gutter stagger">
             {[
               { icon: "history", value: `${COMPANY.years}`, label: "Years Experience" },
               { icon: "verified", value: "TrustSEAL", label: "Verified Seller" },
               { icon: "speed", value: COMPANY.responseRate, label: "Response Rate" },
               { icon: "inventory_2", value: COMPANY.designs, label: "Product Designs" },
             ].map((stat) => (
-              <div key={stat.label} className="flex flex-col items-center text-center p-3 md:p-6 bg-white border border-metallic-silver">
-                <span className="material-symbols-outlined text-primary text-3xl md:text-4xl mb-2">{stat.icon}</span>
-                <span className="font-display text-2xl md:text-headline-lg text-on-background">{stat.value}</span>
-                <span className="font-mono text-[10px] md:text-label-mono text-steel-blue uppercase leading-tight mt-1">{stat.label}</span>
+              <div key={stat.label} className="flex flex-col items-center text-center p-2.5 md:p-6 bg-white border border-metallic-silver">
+                <span className="material-symbols-outlined text-primary text-2xl md:text-4xl mb-1 md:mb-2">{stat.icon}</span>
+                <span className="font-display text-xl md:text-headline-lg text-on-background">{stat.value}</span>
+                <span className="font-mono text-[9px] md:text-label-mono text-steel-blue uppercase leading-tight mt-0.5">{stat.label}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="pt-6 pb-10 md:py-16 figma-dots">
-        <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop">
+      <section className="pt-6 pb-10 md:py-16 figma-dots overflow-x-hidden">
+        <div className="max-w-container-max mx-auto px-4 md:px-margin-desktop min-w-0">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 md:mb-10 gap-3">
             <div>
               <h2 className="font-display text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Our Core Products</h2>
               <div className="w-24 h-1 bg-primary" />
             </div>
-            <Link href="/products" className="text-primary font-mono font-bold uppercase flex items-center gap-2 group">
+            <Link href="/products" className="text-primary font-mono font-bold uppercase flex items-center gap-2 group text-sm md:text-base">
               View Full Catalog
               <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter stagger md:items-stretch">
-            <div className="md:col-span-8 group relative overflow-hidden bg-industrial-gray border border-metallic-silver aspect-[16/9] md:aspect-auto md:h-full min-h-[240px]">
-              <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt={biryani.name} src={biryani.image} />
-              <div className="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent flex flex-col justify-end p-4 sm:p-6 md:p-8">
-                <span className="text-primary-fixed font-mono uppercase mb-2 text-xs sm:text-sm">Food Packaging</span>
-                <h3 className="font-display text-xl md:text-headline-lg text-white mb-2 md:mb-4">Biryani Tin Containers</h3>
-                <p className="text-surface-variant max-w-lg mb-4 md:mb-6 hidden sm:block">{biryani.description}</p>
-                <Link href={`/products/${biryani.id}`} className="bg-white text-on-background px-6 py-2 font-mono font-bold w-fit uppercase hover:bg-primary hover:text-white transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-gutter stagger md:items-stretch min-w-0">
+            <div className="md:col-span-8 group bg-white border border-metallic-silver overflow-hidden min-w-0">
+              <div className="relative bg-surface-container-low aspect-[4/3] md:aspect-[16/9] md:h-full md:min-h-[240px]">
+                <img
+                  className="w-full h-full max-w-none object-contain p-5 md:object-cover md:p-0 md:group-hover:scale-105 transition-transform duration-700"
+                  alt={biryani.name}
+                  src={biryani.image}
+                />
+                <div className="hidden md:flex absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent flex-col justify-end p-8">
+                  <span className="text-primary-fixed font-mono uppercase mb-2 text-sm">Food Packaging</span>
+                  <h3 className="font-display text-headline-lg text-white mb-4">Biryani Tin Containers</h3>
+                  <p className="text-surface-variant max-w-lg mb-6">{biryani.description}</p>
+                  <Link href={`/products/${biryani.id}`} className="bg-white text-on-background px-6 py-2 font-mono font-bold w-fit uppercase hover:bg-primary hover:text-white transition-colors">
+                    View Specs
+                  </Link>
+                </div>
+              </div>
+              <div className="p-4 md:hidden border-t border-metallic-silver">
+                <span className="font-mono text-caption uppercase text-primary">Food Packaging</span>
+                <h3 className="font-display text-title-md font-bold mt-1 mb-3">Biryani Tin Containers</h3>
+                <Link href={`/products/${biryani.id}`} className="text-primary font-mono text-sm font-bold uppercase">
                   View Specs
                 </Link>
               </div>
             </div>
-            <div className="md:col-span-4 group flex flex-col bg-white border border-metallic-silver h-full">
-              <div className="flex-1 min-h-[180px] overflow-hidden bg-surface-container-low p-8">
-                <img className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" alt={paint.name} src={paint.image} />
+            <div className="md:col-span-4 group flex flex-col bg-white border border-metallic-silver min-w-0">
+              <div className="aspect-[4/3] md:aspect-auto md:flex-1 md:min-h-[180px] overflow-hidden bg-surface-container-low p-6 md:p-8">
+                <img className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" alt={paint.name} src={paint.image} />
               </div>
-              <div className="p-6 border-t border-metallic-silver">
+              <div className="p-4 md:p-6 border-t border-metallic-silver">
                 <h3 className="font-display text-title-md font-bold mb-2">Paint Coated Containers</h3>
-                <p className="text-body-md text-on-surface-variant mb-4">{paint.description}</p>
+                <p className="hidden md:block text-body-md text-on-surface-variant mb-4">{paint.description}</p>
                 <Link href={`/products/${paint.id}`} className="text-primary font-mono text-sm font-bold uppercase hover:underline">
                   Explore Options
                 </Link>
               </div>
             </div>
-            <div className="md:col-span-4 group flex flex-col bg-white border border-metallic-silver h-full">
-              <div className="flex-1 min-h-[180px] overflow-hidden bg-surface-container-low p-4">
+            <div className="md:col-span-4 group flex flex-col bg-white border border-metallic-silver min-w-0">
+              <div className="aspect-[4/3] md:aspect-auto md:flex-1 md:min-h-[180px] overflow-hidden bg-surface-container-low p-4">
                 <img className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" alt="Printed food and gift tin cans" src={IMAGES.foodCansDisplay} />
               </div>
-              <div className="p-6 border-t border-metallic-silver">
+              <div className="p-4 md:p-6 border-t border-metallic-silver">
                 <h3 className="font-display text-title-md font-bold mb-2">Food Cans</h3>
-                <p className="text-body-md text-on-surface-variant mb-4">{food.description}</p>
+                <p className="hidden md:block text-body-md text-on-surface-variant mb-4">{food.description}</p>
                 <Link href={`/products/${food.id}`} className="text-primary font-mono text-sm font-bold uppercase hover:underline">
                   Explore Options
                 </Link>
