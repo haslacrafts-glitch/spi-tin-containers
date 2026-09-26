@@ -75,9 +75,9 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-gutter stagger md:items-stretch min-w-0">
             <div className="md:col-span-8 group bg-white border border-metallic-silver overflow-hidden min-w-0">
-              <div className="relative bg-surface-container-low aspect-[4/3] md:aspect-[16/9] md:h-full md:min-h-[240px]">
+              <div className="relative bg-surface-container-low aspect-[4/3] md:aspect-[16/9] md:h-full md:min-h-[240px] flex items-center justify-center">
                 <img
-                  className="w-full h-full max-w-none object-contain p-5 md:object-cover md:p-0 md:group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full max-w-none object-contain object-center p-5 md:p-10 md:group-hover:scale-105 transition-transform duration-700"
                   alt={biryani.name}
                   src={biryani.image}
                 />

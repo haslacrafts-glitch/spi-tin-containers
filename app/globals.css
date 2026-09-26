@@ -13,10 +13,9 @@ body {
   overflow-x: clip;
 }
 
-.page-enter {
-  width: 100%;
-  max-width: 100%;
-  animation: page-in 0.45s ease both;
+html.menu-open,
+body.menu-open {
+  overflow: hidden;
 }
 
 body.menu-open .mobile-tabbar {
@@ -133,8 +132,8 @@ img {
 }
 
 .motion-on .reveal:not(.is-visible) {
-  opacity: 0;
-  transform: translateY(28px);
+  opacity: 1;
+  transform: none;
 }
 
 .motion-on .reveal {

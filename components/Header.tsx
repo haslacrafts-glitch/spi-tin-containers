@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { COMPANY, NAV } from "@/lib/data";
 import { QuoteButton } from "./QuoteButton";
 import { useQuote } from "./QuoteProvider";
@@ -11,6 +12,11 @@ export function Header() {
   const pathname = usePathname();
   const { isOpen } = useQuote();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -22,10 +28,12 @@ export function Header() {
       if (e.key === "Escape") setMenuOpen(false);
     };
     window.addEventListener("keydown", onKey);
+    document.documentElement.classList.add("menu-open");
     document.body.style.overflow = "hidden";
     document.body.classList.add("menu-open");
     return () => {
       window.removeEventListener("keydown", onKey);
+      document.documentElement.classList.remove("menu-open");
       document.body.style.overflow = "";
       document.body.classList.remove("menu-open");
     };
@@ -35,8 +43,38 @@ export function Header() {
     return href === "/" ? pathname === "/" : pathname.startsWith(href);
   }
 
+  const menu = menuOpen ? (
+    <div className="lg:hidden">
+      <button type="button" className="fixed inset-0 z-[80] bg-on-background/50" aria-label="Close menu" onClick={() => setMenuOpen(false)} />
+      <nav className="fixed top-0 right-0 z-[90] h-[100dvh] w-[min(82%,20rem)] bg-white p-6 flex flex-col gap-1 shadow-xl overflow-y-auto">
+        <div className="flex justify-between items-center border-b border-metallic-silver pb-4 mb-3">
+          <span className="font-display text-title-md text-primary">Menu</span>
+          <button type="button" className="text-steel-blue min-h-11 min-w-11" onClick={() => setMenuOpen(false)} aria-label="Close menu">
+            <span className="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        {NAV.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={() => setMenuOpen(false)}
+            className={`block py-3 text-lg ${isActive(item.href) ? "text-primary font-bold" : "text-on-surface-variant"}`}
+          >
+            {item.label}
+          </Link>
+        ))}
+        <a href={`tel:${COMPANY.phoneTel}`} className="mt-4 py-3 font-mono text-primary uppercase">
+          Call {COMPANY.phoneDisplay}
+        </a>
+        <QuoteButton className="mt-2 bg-primary text-white px-4 py-3 font-mono text-label-mono font-bold uppercase" prefill={{}}>
+          Get a Quote
+        </QuoteButton>
+      </nav>
+    </div>
+  ) : null;
+
   return (
-    <header className="bg-surface/95 backdrop-blur-md sticky top-0 z-50 border-b border-metallic-silver">
+    <header className="bg-surface sticky top-0 z-50 border-b border-metallic-silver">
       <div className="hidden lg:flex bg-primary text-white">
         <div className="max-w-container-max mx-auto w-full px-margin-desktop h-9 flex items-center justify-between gap-6 font-mono text-[11px] uppercase tracking-widest">
           <a href={`tel:${COMPANY.phoneTel}`} className="inline-flex items-center gap-2 hover:opacity-80">
@@ -50,11 +88,7 @@ export function Header() {
 
       <div className="max-w-container-max mx-auto h-14 lg:h-[4.25rem] px-4 md:px-margin-desktop flex items-center gap-3 lg:gap-6">
         <Link href="/" className="flex items-center gap-2 min-w-0 flex-1 lg:flex-none">
-          <img
-            src="/images/spi-logo.png?v=2"
-            alt=""
-            className="h-8 lg:h-12 w-auto shrink-0"
-          />
+          <img src="/images/spi-logo.png?v=2" alt="" className="h-8 lg:h-12 w-auto shrink-0" />
           <span className="min-w-0">
             <span className="block font-display font-bold text-primary text-sm lg:text-base leading-tight truncate">
               <span className="sm:hidden">SPI Tins</span>
@@ -85,7 +119,7 @@ export function Header() {
           })}
         </nav>
 
-        <div className="ml-auto lg:ml-3 flex items-center gap-2 shrink-0">
+        <div className="ml-auto lg:ml-3 flex items-center gap-2 shrink-0 relative z-[70]">
           <QuoteButton className="hidden md:inline-flex items-center h-10 px-5 bg-primary text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-primary-container">
             Get Quote
           </QuoteButton>
@@ -101,35 +135,7 @@ export function Header() {
         </div>
       </div>
 
-      {menuOpen ? (
-        <div className="lg:hidden">
-          <button type="button" className="fixed inset-0 z-[55] bg-on-background/50" aria-label="Close menu" onClick={() => setMenuOpen(false)} />
-          <nav className="fixed top-0 right-0 z-[60] h-[100dvh] w-[min(82%,20rem)] bg-white p-6 flex flex-col gap-1 shadow-xl overflow-y-auto">
-            <div className="flex justify-between items-center border-b border-metallic-silver pb-4 mb-3">
-              <span className="font-display text-title-md text-primary">Menu</span>
-              <button type="button" className="text-steel-blue min-h-11 min-w-11" onClick={() => setMenuOpen(false)} aria-label="Close menu">
-                <span className="material-symbols-outlined">close</span>
-              </button>
-            </div>
-            {NAV.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className={`block py-3 text-lg ${isActive(item.href) ? "text-primary font-bold" : "text-on-surface-variant"}`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <a href={`tel:${COMPANY.phoneTel}`} className="mt-4 py-3 font-mono text-primary uppercase">
-              Call {COMPANY.phoneDisplay}
-            </a>
-            <QuoteButton className="mt-2 bg-primary text-white px-4 py-3 font-mono text-label-mono font-bold uppercase" prefill={{}}>
-              Get a Quote
-            </QuoteButton>
-          </nav>
-        </div>
-      ) : null}
+      {mounted ? createPortal(menu, document.body) : null}
     </header>
   );
 }

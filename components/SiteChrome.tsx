@@ -11,10 +11,8 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <AnimatePage>
-        {children}
-        <Footer />
-      </AnimatePage>
+      <AnimatePage>{children}</AnimatePage>
+      <Footer />
       <InquiryTray />
       <MobileBar />
       <QuoteModal />
