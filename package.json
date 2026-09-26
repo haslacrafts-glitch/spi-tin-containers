@@ -9,6 +9,7 @@
     "telegram:setup": "node scripts/telegram-setup.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.117.1",
     "jspdf": "^4.2.1",
     "next": "^14.2.15",
     "react": "^18.3.1",

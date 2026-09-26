@@ -66,6 +66,26 @@ export async function POST(req: Request) {
   }
 
   try {
+    try {
+      const { supabaseConfigured, getSupabasePublic } = await import("@/lib/supabase/public");
+      if (supabaseConfigured()) {
+        await getSupabasePublic().from("enquiries").insert({
+          name,
+          phone,
+          email,
+          buyer_type: buyerType,
+          company_name: buyerType === "company" ? companyName : "",
+          product_name: product,
+          product_slug: productId,
+          quantity,
+          message,
+          status: "new",
+        });
+      }
+    } catch (err) {
+      console.error("enquiry persist", err);
+    }
+
     await sendQuoteToTelegram({
       name,
       phone,

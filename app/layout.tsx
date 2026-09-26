@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { MobileBar } from "@/components/MobileBar";
-import { QuoteModal } from "@/components/QuoteModal";
 import { QuoteProvider } from "@/components/QuoteProvider";
-import { InquiryTray } from "@/components/InquiryTray";
-import { AnimatePage } from "@/components/AnimatePage";
+import { SiteChrome } from "@/components/SiteChrome";
 import { JsonLd } from "@/components/JsonLd";
 import { COMPANY } from "@/lib/data";
 import { SEO_DESCRIPTION, SEO_KEYWORDS, SITE_URL } from "@/lib/seo";
@@ -77,17 +72,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className={`${hanken.variable} ${plex.variable} ${jetbrains.variable} bg-background text-on-background font-body antialiased overflow-x-hidden selection:bg-primary-fixed selection:text-on-background`}>
+      <body className={`${hanken.variable} ${plex.variable} ${jetbrains.variable} bg-background text-on-background font-body antialiased selection:bg-primary-fixed selection:text-on-background`}>
         <QuoteProvider>
           <JsonLd />
-          <Header />
-          <AnimatePage>
-            {children}
-            <Footer />
-          </AnimatePage>
-          <InquiryTray />
-          <MobileBar />
-          <QuoteModal />
+          <SiteChrome>{children}</SiteChrome>
         </QuoteProvider>
       </body>
     </html>

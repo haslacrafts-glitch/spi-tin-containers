@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { PRODUCTS } from "@/lib/data";
+import { getLiveProducts } from "@/lib/live-products";
 import { SITE_URL } from "@/lib/seo";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const pages: MetadataRoute.Sitemap = [
     { url: SITE_URL, lastModified: now, changeFrequency: "weekly", priority: 1 },
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/photos`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
-  for (const product of PRODUCTS) {
+  for (const product of await getLiveProducts()) {
     pages.push({
       url: `${SITE_URL}/products/${product.id}`,
       lastModified: now,

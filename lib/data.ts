@@ -86,6 +86,7 @@ export type Product = {
   name: string;
   category: string;
   image: string;
+  images?: string[];
   specs: string[];
   price: string;
   bestSeller?: boolean;

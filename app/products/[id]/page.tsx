@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { COMPANY, PRODUCTS, specPairs, categoryShort } from "@/lib/data";
-import {
-  compactCapacity,
-  productGrade,
-  productLeadTime,
-  productMoq,
-  productPrint,
-  relatedSizes,
-} from "@/lib/catalog-meta";
+import { COMPANY, PRODUCTS, categoryShort, type Product } from "@/lib/data";
+import { getLiveProduct, getLiveProducts } from "@/lib/live-products";
+import { compactCapacity, highlightSpecs, remainingSpecs } from "@/lib/catalog-meta";
 import { ProductActions } from "@/components/ProductActions";
+import { ProductGallery } from "@/components/ProductGallery";
 
 type Params = { id: string };
+
+export const dynamicParams = true;
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 
 export function generateStaticParams() {
   return PRODUCTS.map((p) => ({ id: p.id }));
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
-  const product = PRODUCTS.find((p) => p.id === params.id);
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const product = (await getLiveProduct(params.id)) || PRODUCTS.find((p) => p.id === params.id);
   if (!product) return { title: "Product" };
   return {
     title: `${product.name} | ${product.category} Manufacturer Chennai`,
@@ -34,60 +33,64 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   };
 }
 
-export default function ProductPage({ params }: { params: Params }) {
-  const product = PRODUCTS.find((p) => p.id === params.id);
+export default async function ProductPage({ params }: { params: Params }) {
+  const product = (await getLiveProduct(params.id)) || PRODUCTS.find((p) => p.id === params.id);
   if (!product) notFound();
 
-  const family = relatedSizes(product);
+  const all = await getLiveProducts();
+  const family = all
+    .filter((p: Product) => p.category === product.category)
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const highlights = highlightSpecs(product);
+  const extras = remainingSpecs(product);
   const cap = compactCapacity(product);
-  const grade = productGrade(product);
-  const print = productPrint(product);
-  const moq = productMoq(product);
-  const lead = productLeadTime();
-  const pairs = specPairs(product);
+  const sizeFamily = family.filter((item) => {
+    const label = compactCapacity(item);
+    return label && label.length <= 12;
+  });
 
   return (
-    <main className="max-w-container-max mx-auto px-4 md:px-margin-desktop py-6 md:py-10 pb-28">
+    <main className="max-w-container-max mx-auto px-4 md:px-margin-desktop py-6 md:py-10 pb-24 md:pb-10">
       <Link href="/products" className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-steel-blue hover:text-primary mb-6 min-h-11">
         <span className="material-symbols-outlined text-base">arrow_back</span>
         Back to catalog
       </Link>
 
       <article className="bg-white border border-metallic-silver grid grid-cols-1 lg:grid-cols-2">
-        <div className="aspect-square lg:aspect-auto lg:min-h-[420px] overflow-hidden bg-surface-container-low">
-          <img src={product.image} alt={product.name} className="w-full h-full object-contain p-6" />
-        </div>
-        <div className="p-6 md:p-10 flex flex-col">
+        <ProductGallery name={product.name} images={product.images?.length ? product.images : [product.image]} />
+        <div className="p-5 md:p-8 flex flex-col">
           <p className="font-mono text-caption text-primary uppercase tracking-widest mb-2">
             {categoryShort(product.category)}
             {cap ? ` · ${cap}` : ""}
           </p>
-          <h1 className="font-display text-headline-lg-mobile md:text-headline-lg text-on-background mb-3">{product.name}</h1>
-          <p className="font-display text-2xl md:text-headline-lg text-primary mb-4">{product.price}</p>
-          <p className="text-body-md text-on-surface-variant mb-8">{product.description}</p>
+          <h1 className="font-display text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">{product.name}</h1>
+          <p className="font-display text-2xl text-primary mb-3">{product.price}</p>
+          {product.description ? <p className="text-body-md text-on-surface-variant mb-6">{product.description}</p> : null}
 
-          <dl className="border-t border-metallic-silver pt-6 mb-6 grid grid-cols-2 gap-x-4 gap-y-5">
-            <Spec label="Capacity" value={cap || "Custom size"} />
-            <Spec label="MOQ" value={`From ${moq}`} />
-            <Spec label="Lead time" value={lead} />
-            <Spec label="Grade" value={`${grade} tinplate`} />
-            <Spec label="Print" value={print} />
-            <Spec label="Print options" value="Plain, 1-colour, offset" />
-          </dl>
+          {highlights.length ? (
+            <dl className="border-t border-metallic-silver pt-5 mb-6 grid grid-cols-2 gap-x-6 gap-y-4">
+              {highlights.map((row) => (
+                <div key={row.label}>
+                  <dt className="font-mono text-[10px] uppercase tracking-widest text-steel-blue">{row.label}</dt>
+                  <dd className="font-display text-on-background mt-1">{row.value}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
 
-          {family.length > 1 ? (
-            <div className="mb-8">
+          {sizeFamily.length > 1 ? (
+            <div className="mb-6">
               <p className="font-mono text-[11px] uppercase tracking-widest text-steel-blue mb-2">Sizes in this family</p>
-              <div className="flex flex-wrap gap-2">
-                {family.map((item) => {
-                  const label = compactCapacity(item) || item.name;
+              <div className="flex gap-2 overflow-x-auto chip-scroll">
+                {sizeFamily.map((item) => {
+                  const label = compactCapacity(item);
                   const current = item.id === product.id;
                   return (
                     <Link
                       key={item.id}
                       href={`/products/${item.id}`}
                       aria-current={current ? "page" : undefined}
-                      className={`min-h-11 px-3 inline-flex items-center font-mono text-xs uppercase tracking-widest border ${
+                      className={`shrink-0 min-h-10 px-3 inline-flex items-center font-mono text-xs uppercase tracking-widest border ${
                         current ? "bg-primary text-white border-primary" : "border-metallic-silver text-on-surface-variant hover:border-primary hover:text-primary"
                       }`}
                     >
@@ -99,18 +102,18 @@ export default function ProductPage({ params }: { params: Params }) {
             </div>
           ) : null}
 
-          <div className="border-t border-metallic-silver pt-6 mb-8 space-y-3">
-            {pairs.map((spec) => (
-              <p key={spec.label} className="flex items-baseline justify-between gap-4 text-body-md border-b border-industrial-gray pb-3">
-                <span className="text-steel-blue">{spec.label}</span>
-                <span className="font-semibold text-on-background text-right">{spec.value}</span>
-              </p>
-            ))}
-          </div>
+          {extras.length ? (
+            <div className="border-t border-metallic-silver pt-5 mb-6">
+              {extras.map((spec) => (
+                <p key={spec.label} className="flex items-baseline justify-between gap-4 text-body-md border-b border-industrial-gray py-3 last:border-b-0">
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-steel-blue">{spec.label}</span>
+                  <span className="font-semibold text-on-background text-right">{spec.value}</span>
+                </p>
+              ))}
+            </div>
+          ) : null}
 
-          <p className="text-sm text-on-surface-variant mb-6">
-            Manufacturer in {COMPANY.city}. Plain, single-colour, or offset print. Bulk orders from {moq}.
-          </p>
+          <p className="text-sm text-on-surface-variant mb-6">Manufacturer in {COMPANY.city}.</p>
 
           <ProductActions
             item={{
@@ -122,40 +125,6 @@ export default function ProductPage({ params }: { params: Params }) {
           />
         </div>
       </article>
-
-      {family.filter((item) => item.id !== product.id).length ? (
-        <section className="mt-12">
-          <h2 className="font-display text-title-md mb-6">Related sizes</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            {family
-              .filter((item) => item.id !== product.id)
-              .slice(0, 3)
-              .map((item) => (
-                <Link key={item.id} href={`/products/${item.id}`} className="bg-white border border-metallic-silver hover-lift block">
-                  <div className="h-48 overflow-hidden bg-surface-container-low">
-                    <img src={item.image} alt={item.name} className="w-full h-full object-contain p-3" />
-                  </div>
-                  <div className="p-5">
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-steel-blue">
-                      {compactCapacity(item) || categoryShort(item.category)}
-                    </p>
-                    <h3 className="font-display text-on-background mt-1">{item.name}</h3>
-                    <p className="font-mono text-sm text-primary mt-2">{item.price}</p>
-                  </div>
-                </Link>
-              ))}
-          </div>
-        </section>
-      ) : null}
     </main>
-  );
-}
-
-function Spec({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <dt className="font-mono text-[10px] uppercase tracking-widest text-steel-blue">{label}</dt>
-      <dd className="font-display text-on-background mt-1">{value}</dd>
-    </div>
   );
 }

@@ -164,6 +164,49 @@ export function productLeadTime() {
   return "7–12 working days";
 }
 
+const HIGHLIGHT_ALIASES: Record<string, string[]> = {
+  Capacity: ["capacity", "size"],
+  MOQ: ["moq", "minimum order", "min order"],
+  "Lead time": ["lead time", "leadtime"],
+  Grade: ["grade"],
+  Print: ["print"],
+  "Print options": ["print options", "print option"],
+};
+
+function normLabel(label: string) {
+  return label.toLowerCase().replace(/[_-]+/g, " ").replace(/\s+/g, " ").trim();
+}
+
+export function specValue(product: Product, aliases: string[]) {
+  const want = aliases.map(normLabel);
+  const hit = specPairs(product).find((p) => want.includes(normLabel(p.label)));
+  return hit?.value?.trim() || "";
+}
+
+export function highlightSpecs(product: Product) {
+  const cap = specValue(product, HIGHLIGHT_ALIASES.Capacity) || compactCapacity(product);
+  const moq = specValue(product, HIGHLIGHT_ALIASES.MOQ) || productMoq(product);
+  const lead = specValue(product, HIGHLIGHT_ALIASES["Lead time"]) || productLeadTime();
+  const grade = specValue(product, HIGHLIGHT_ALIASES.Grade) || `${productGrade(product)} tinplate`;
+  const print = specValue(product, HIGHLIGHT_ALIASES.Print) || productPrint(product);
+  const printOptions = specValue(product, HIGHLIGHT_ALIASES["Print options"]);
+  return [
+    cap ? { label: "Capacity", value: cap } : null,
+    moq ? { label: "MOQ", value: /from /i.test(moq) ? moq : `From ${moq}` } : null,
+    lead ? { label: "Lead time", value: lead } : null,
+    grade ? { label: "Grade", value: grade } : null,
+    print ? { label: "Print", value: print } : null,
+    printOptions ? { label: "Print options", value: printOptions } : null,
+  ].filter((row): row is { label: string; value: string } => Boolean(row));
+}
+
+export function remainingSpecs(product: Product) {
+  const shown = new Set(highlightSpecs(product).map((row) => normLabel(row.label)));
+  shown.add("size");
+  shown.add("capacity");
+  return specPairs(product).filter((p) => p.value && !shown.has(normLabel(p.label)));
+}
+
 export function laneForCategory(category: string): LaneId | undefined {
   return LANES.find((lane) => (lane.categories as readonly string[]).includes(category))?.id;
 }

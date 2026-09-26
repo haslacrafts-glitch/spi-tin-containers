@@ -9,7 +9,6 @@ import {
   categoriesForLane,
   laneForCategory,
   productSizeId,
-  productsInLane,
   searchProducts,
   compactCapacity,
   type LaneId,
@@ -40,6 +39,7 @@ function catalogUrl(lane: LaneFilter, category: string | "All", size: SizeFilter
 export function ProductsCatalog() {
   const searchParams = useSearchParams();
   const gridRef = useRef<HTMLDivElement>(null);
+  const [allProducts, setAllProducts] = useState(PRODUCTS);
   const [lane, setLane] = useState<LaneFilter>("All");
   const [category, setCategory] = useState<string | "All">("All");
   const [size, setSize] = useState<SizeFilter>("All");
@@ -48,11 +48,20 @@ export function ProductsCatalog() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
+    fetch("/api/catalog", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((d) => {
+        if (Array.isArray(d.products) && d.products.length) setAllProducts(d.products);
+      })
+      .catch(() => undefined);
+  }, []);
+
+  useEffect(() => {
     const requestedCat = searchParams.get("category");
     const requestedLane = searchParams.get("lane");
     const requestedSize = searchParams.get("size");
     const requestedQ = searchParams.get("q") || "";
-    const cat = requestedCat && PRODUCTS.some((p) => p.category === requestedCat) ? requestedCat : "All";
+    const cat = requestedCat && allProducts.some((p) => p.category === requestedCat) ? requestedCat : "All";
     const inferredLane = cat !== "All" ? laneForCategory(cat) : undefined;
     const nextLane: LaneFilter =
       requestedLane && LANES.some((l) => l.id === requestedLane)
@@ -67,7 +76,7 @@ export function ProductsCatalog() {
     setQuery(requestedQ);
     setQueryInput(requestedQ);
     setPage(Number.isFinite(raw) && raw > 0 ? Math.floor(raw) : 1);
-  }, [searchParams]);
+  }, [searchParams, allProducts]);
 
   function goTo(
     next: { lane?: LaneFilter; category?: string | "All"; size?: SizeFilter; q?: string; page?: number },
@@ -103,8 +112,17 @@ export function ProductsCatalog() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queryInput]);
 
-  const lanePool = useMemo(() => productsInLane(lane), [lane]);
-  const chipCategories = categoriesForLane(lane);
+  const lanePool = useMemo(() => {
+    if (lane === "All") return allProducts;
+    const laneDef = LANES.find((item) => item.id === lane);
+    if (!laneDef) return allProducts;
+    return allProducts.filter((p) => (laneDef.categories as readonly string[]).includes(p.category));
+  }, [lane, allProducts]);
+  const chipCategories = useMemo(() => {
+    const fromLane = categoriesForLane(lane);
+    const extra = Array.from(new Set(lanePool.map((p) => p.category))).filter((c) => !fromLane.includes(c));
+    return [...fromLane, ...extra];
+  }, [lane, lanePool]);
 
   const items = useMemo(() => {
     let list = lanePool;
@@ -125,7 +143,7 @@ export function ProductsCatalog() {
         </h1>
         <p className="hidden sm:block text-body-md md:text-body-lg text-on-surface-variant max-w-2xl mt-2">
           Shop by job, size, or name. Paint tins, oil tins, ghee tins, biryani tins, and food cans from tin manufacturers in
-          Chennai. {PRODUCTS.length} products.
+          Chennai. {allProducts.length} products.
         </p>
         <div className="mt-3">
           <DownloadCatalog className="w-full sm:w-auto" />
@@ -163,7 +181,7 @@ export function ProductsCatalog() {
         <div className="flex md:grid md:grid-cols-3 gap-3 md:gap-gutter overflow-x-auto chip-scroll snap-x snap-mandatory md:overflow-visible pb-1 -mx-4 px-4 md:mx-0 md:px-0">
           {LANES.map((item) => {
             const active = lane === item.id;
-            const count = productsInLane(item.id).length;
+            const count = allProducts.filter((p) => (item.categories as readonly string[]).includes(p.category)).length;
             return (
               <button
                 key={item.id}

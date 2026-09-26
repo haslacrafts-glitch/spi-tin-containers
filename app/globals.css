@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+html {
+  width: 100%;
+  overflow-x: clip;
+}
+
+body {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .page-enter {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
   animation: page-in 0.45s ease both;
 }
 
