@@ -16,7 +16,7 @@ function parseIds(value?: string) {
 export function QuoteModal() {
   const { isOpen, closeQuote, prefill, clearItems, removeItem, items } = useQuote();
   const [catalog, setCatalog] = useState<Product[]>(PRODUCTS);
-  const [categories, setCategories] = useState<string[]>(CATEGORIES);
+  const [categories, setCategories] = useState<string[]>(() => [...CATEGORIES]);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
