@@ -1,14 +1,22 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
-import { findProductsByIds } from "@/lib/catalog-meta";
-import { CATEGORIES, COMPANY, PRODUCTS } from "@/lib/data";
-import { useQuote } from "./QuoteProvider";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { CATEGORIES, COMPANY, PRODUCTS, type Product } from "@/lib/data";
+import { useQuote, type InquiryItem } from "./QuoteProvider";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+function parseIds(value?: string) {
+  return (value || "")
+    .split(",")
+    .map((id) => id.trim())
+    .filter(Boolean);
+}
+
 export function QuoteModal() {
-  const { isOpen, closeQuote, prefill, clearItems, removeItem } = useQuote();
+  const { isOpen, closeQuote, prefill, clearItems, removeItem, items } = useQuote();
+  const [catalog, setCatalog] = useState<Product[]>(PRODUCTS);
+  const [categories, setCategories] = useState<string[]>(CATEGORIES);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -24,17 +32,28 @@ export function QuoteModal() {
   const nameRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    fetch("/api/catalog", { cache: "no-store" })
+      .then((r) => r.json())
+      .then((d) => {
+        if (Array.isArray(d.products) && d.products.length) setCatalog(d.products);
+        if (Array.isArray(d.categories) && d.categories.length) setCategories(d.categories);
+      })
+      .catch(() => undefined);
+  }, []);
+
+  useEffect(() => {
     if (!isOpen) return;
-    const ids = (prefill.productId || "")
-      .split(",")
-      .map((id) => id.trim())
-      .filter(Boolean);
+    const ids = parseIds(prefill.productId);
     if (ids.length > 1) {
-      const matches = findProductsByIds(ids);
+      const matches = ids
+        .map((id) => catalog.find((p) => p.id === id) || items.find((item) => item.id === id))
+        .filter((item): item is Product | InquiryItem => Boolean(item));
       setProduct(matches.map((p) => p.name).join(", ") || prefill.product || "");
       setProductId(ids.join(","));
     } else {
-      const match = PRODUCTS.find((p) => p.id === prefill.productId || p.name === prefill.product);
+      const match =
+        catalog.find((p) => p.id === prefill.productId || (prefill.product && p.name === prefill.product)) ||
+        items.find((item) => item.id === prefill.productId || (prefill.product && item.name === prefill.product));
       setProduct(match?.name || prefill.product || "");
       setProductId(match?.id || prefill.productId || "");
     }
@@ -46,6 +65,8 @@ export function QuoteModal() {
     setError("");
     const t = setTimeout(() => nameRef.current?.focus(), 50);
     return () => clearTimeout(t);
+    // catalog/items are used only to resolve names; do not reset the form when they load
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen, prefill]);
 
   useEffect(() => {
@@ -61,15 +82,44 @@ export function QuoteModal() {
     };
   }, [isOpen, closeQuote]);
 
+  const selectProducts = useMemo(() => {
+    const list = [...catalog];
+    if (productId && !productId.includes(",") && !list.some((p) => p.id === productId)) {
+      const fromInquiry = items.find((item) => item.id === productId);
+      list.push({
+        id: productId,
+        name: fromInquiry?.name || product || productId,
+        category: "Selected product",
+        image: fromInquiry?.image || "",
+        specs: [],
+        price: fromInquiry?.price || "",
+        description: "",
+      });
+    }
+    return list;
+  }, [catalog, productId, product, items]);
+
+  const selectCategories = useMemo(() => {
+    const cats = [...categories];
+    for (const item of selectProducts) {
+      if (item.category && !cats.includes(item.category)) cats.push(item.category);
+    }
+    return cats;
+  }, [categories, selectProducts]);
+
   if (!isOpen) return null;
 
-  const inquiryList = findProductsByIds(
-    productId
-      .split(",")
-      .map((id) => id.trim())
-      .filter(Boolean),
-  );
+  const inquiryList = parseIds(productId)
+    .map((id) => catalog.find((p) => p.id === id) || items.find((item) => item.id === id))
+    .filter((item): item is Product | InquiryItem => Boolean(item));
   const isMulti = inquiryList.length > 1;
+
+  const selectedSingle =
+    !isMulti && productId
+      ? catalog.find((p) => p.id === productId) ||
+        items.find((item) => item.id === productId) ||
+        selectProducts.find((p) => p.id === productId)
+      : undefined;
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -216,11 +266,24 @@ export function QuoteModal() {
                   </div>
                 ) : (
                   <Field label="Product Interest">
+                    {selectedSingle ? (
+                      <div className="flex items-center gap-3 border border-metallic-silver px-3 py-2 mb-2">
+                        {selectedSingle.image ? (
+                          <img src={selectedSingle.image} alt="" className="w-12 h-12 object-contain bg-surface-container-low" />
+                        ) : null}
+                        <div className="min-w-0">
+                          <p className="text-sm text-on-background truncate">{selectedSingle.name}</p>
+                          {"price" in selectedSingle && selectedSingle.price ? (
+                            <p className="font-mono text-[11px] text-steel-blue">{selectedSingle.price}</p>
+                          ) : null}
+                        </div>
+                      </div>
+                    ) : null}
                     <select
                       value={productId || product}
                       onChange={(e) => {
                         const value = e.target.value;
-                        const match = PRODUCTS.find((p) => p.id === value);
+                        const match = selectProducts.find((p) => p.id === value);
                         if (match) {
                           setProductId(match.id);
                           setProduct(match.name);
@@ -232,23 +295,25 @@ export function QuoteModal() {
                       className={inputClass}
                     >
                       <option value="">Select product</option>
-                      {CATEGORIES.map((c) => (
+                      {selectCategories.map((c) => (
                         <optgroup key={c} label={c}>
-                          {PRODUCTS.filter((p) => p.category === c).map((p) => (
-                            <option key={p.id} value={p.id}>
-                              {p.name} · {p.price}
-                            </option>
-                          ))}
+                          {selectProducts
+                            .filter((p) => p.category === c)
+                            .map((p) => (
+                              <option key={p.id} value={p.id}>
+                                {p.price ? `${p.name} · ${p.price}` : p.name}
+                              </option>
+                            ))}
                         </optgroup>
                       ))}
                       <optgroup label="Category enquiry">
-                        {CATEGORIES.map((c) => (
+                        {selectCategories.map((c) => (
                           <option key={`cat-${c}`} value={c}>
                             {c}
                           </option>
                         ))}
                       </optgroup>
-                      {product && !productId && !CATEGORIES.includes(product) ? (
+                      {product && !productId && !selectCategories.includes(product) ? (
                         <option value={product}>{product}</option>
                       ) : null}
                     </select>
