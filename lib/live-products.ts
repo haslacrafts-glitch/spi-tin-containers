@@ -11,7 +11,7 @@ function mapRow(row: Record<string, unknown>): Product {
       )
     : [];
   return {
-    id: String(row.slug),
+    id: String(row.slug || row.id || ""),
     name: String(row.name),
     category: String(row.category),
     image: images[0] || "",
@@ -39,15 +39,30 @@ export async function getLiveProducts(): Promise<Product[]> {
   }
 }
 
+export function matchLiveProduct(list: Product[], query?: string): Product | undefined {
+  if (!query?.trim()) return undefined;
+  const raw = query.trim();
+  const q = raw.toLowerCase();
+  return (
+    list.find((p) => p.id === raw) ||
+    list.find((p) => p.name.toLowerCase() === q) ||
+    list.find((p) => p.category.toLowerCase() === q) ||
+    list.find((p) => p.name.toLowerCase().includes(q) || q.includes(p.name.toLowerCase()))
+  );
+}
+
 export async function getLiveProduct(id: string): Promise<Product | undefined> {
   if (supabaseConfigured()) {
     try {
-      const { data, error } = await getSupabasePublic().from("products").select("*").eq("slug", id).maybeSingle();
-      if (!error && data) return mapRow(data);
+      const db = getSupabasePublic();
+      const bySlug = await db.from("products").select("*").eq("slug", id).maybeSingle();
+      if (!bySlug.error && bySlug.data) return mapRow(bySlug.data);
+      const byId = await db.from("products").select("*").eq("id", id).maybeSingle();
+      if (!byId.error && byId.data) return mapRow(byId.data);
     } catch {
       /* fall through */
     }
   }
   const list = await getLiveProducts();
-  return list.find((p) => p.id === id) || PRODUCTS.find((p) => p.id === id);
+  return matchLiveProduct(list, id) || matchLiveProduct(PRODUCTS, id);
 }

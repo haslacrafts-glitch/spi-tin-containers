@@ -1,5 +1,5 @@
-import { findProductsByIds } from "@/lib/catalog-meta";
-import { findProduct, specPairs, COMPANY, type Product } from "@/lib/data";
+import { specPairs, COMPANY, type Product } from "@/lib/data";
+import { getLiveProducts, matchLiveProduct } from "@/lib/live-products";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
 
@@ -72,13 +72,18 @@ function cardTitle(product?: Product, fallback?: string) {
   return name;
 }
 
-function resolveProducts(quote: QuotePayload): Product[] {
+async function resolveProducts(quote: QuotePayload): Promise<Product[]> {
   const ids = (quote.productId || "")
     .split(",")
     .map((id) => id.trim())
     .filter(Boolean);
-  if (ids.length > 1) return findProductsByIds(ids);
-  const one = findProduct(quote.productId || quote.product);
+  const live = await getLiveProducts();
+  if (ids.length > 1) {
+    return ids
+      .map((id) => matchLiveProduct(live, id))
+      .filter((p): p is Product => Boolean(p));
+  }
+  const one = matchLiveProduct(live, quote.productId || quote.product);
   return one ? [one] : [];
 }
 
@@ -170,6 +175,9 @@ async function loadPhotoBytes(imageUrl: string) {
     if (existsSync(local)) {
       return { bytes: readFileSync(local), type: "image/webp" };
     }
+    const site = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+    if (site) imageUrl = `${site}${imageUrl}`;
+    else return null;
   }
   const img = await fetch(imageUrl);
   if (!img.ok) return null;
@@ -213,7 +221,7 @@ export async function sendQuoteToTelegram(quote: QuotePayload) {
     );
   }
 
-  const products = resolveProducts(quote);
+  const products = await resolveProducts(quote);
   const product = products[0];
   const caption = buildCaption(quote, products);
   const pageUrl = product ? productLink(quote.origin, product) : undefined;

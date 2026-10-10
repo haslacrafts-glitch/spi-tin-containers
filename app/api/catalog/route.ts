@@ -16,7 +16,7 @@ function mapRow(row: Record<string, unknown>): Product {
       )
     : [];
   return {
-    id: String(row.slug),
+    id: String(row.slug || row.id || ""),
     name: String(row.name),
     category: String(row.category),
     image: images[0] || "",
